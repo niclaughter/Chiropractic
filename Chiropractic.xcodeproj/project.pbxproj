@@ -11,6 +11,8 @@
 		667F0AE01E2AABB4002AFA4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667F0ADE1E2AABB4002AFA4E /* Main.storyboard */; };
 		667F0AE21E2AABB4002AFA4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667F0AE11E2AABB4002AFA4E /* Assets.xcassets */; };
 		667F0AE51E2AABB4002AFA4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667F0AE31E2AABB4002AFA4E /* LaunchScreen.storyboard */; };
+		6697980E1E2AB5C9004E29D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6697980D1E2AB5C9004E29D7 /* GoogleService-Info.plist */; };
+		9B81D702FB24B2529E8F3C60 /* Pods_Chiropractic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,10 @@
 		667F0AE11E2AABB4002AFA4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		667F0AE41E2AABB4002AFA4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		667F0AE61E2AABB4002AFA4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6697980D1E2AB5C9004E29D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiropractic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6E637F459223646C50A5242 /* Pods-Chiropractic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiropractic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic.debug.xcconfig"; sourceTree = "<group>"; };
+		FA17D511EABA103FF64175AF /* Pods-Chiropractic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiropractic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B81D702FB24B2529E8F3C60 /* Pods_Chiropractic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B601E5C0BEA2416C57096AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		59FF74942BA22D716FB69B12 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6E637F459223646C50A5242 /* Pods-Chiropractic.debug.xcconfig */,
+				FA17D511EABA103FF64175AF /* Pods-Chiropractic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		667F0ACE1E2AABB4002AFA4E = {
 			isa = PBXGroup;
 			children = (
 				667F0AD91E2AABB4002AFA4E /* Chiropractic */,
 				667F0AD81E2AABB4002AFA4E /* Products */,
+				59FF74942BA22D716FB69B12 /* Pods */,
+				2B601E5C0BEA2416C57096AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +83,7 @@
 				667F0AE11E2AABB4002AFA4E /* Assets.xcassets */,
 				667F0AE31E2AABB4002AFA4E /* LaunchScreen.storyboard */,
 				667F0AE61E2AABB4002AFA4E /* Info.plist */,
+				6697980D1E2AB5C9004E29D7 /* GoogleService-Info.plist */,
 			);
 			path = Chiropractic;
 			sourceTree = "<group>";
@@ -68,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 667F0AE91E2AABB4002AFA4E /* Build configuration list for PBXNativeTarget "Chiropractic" */;
 			buildPhases = (
+				D06F94558B9CB3D7BB611685 /* [CP] Check Pods Manifest.lock */,
 				667F0AD31E2AABB4002AFA4E /* Sources */,
 				667F0AD41E2AABB4002AFA4E /* Frameworks */,
 				667F0AD51E2AABB4002AFA4E /* Resources */,
+				BB80065AFA1EAEF2B4EC2877 /* [CP] Embed Pods Frameworks */,
+				F90AD8801BE698B0E27BB8E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,12 +152,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				667F0AE51E2AABB4002AFA4E /* LaunchScreen.storyboard in Resources */,
+				6697980E1E2AB5C9004E29D7 /* GoogleService-Info.plist in Resources */,
 				667F0AE21E2AABB4002AFA4E /* Assets.xcassets in Resources */,
 				667F0AE01E2AABB4002AFA4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BB80065AFA1EAEF2B4EC2877 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D06F94558B9CB3D7BB611685 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F90AD8801BE698B0E27BB8E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		667F0AD31E2AABB4002AFA4E /* Sources */ = {
@@ -255,12 +334,13 @@
 		};
 		667F0AEA1E2AABB4002AFA4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6E637F459223646C50A5242 /* Pods-Chiropractic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B24U63J96U;
 				INFOPLIST_FILE = Chiropractic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ninja.areios.Chiropractic;
+				PRODUCT_BUNDLE_IDENTIFIER = ninja.areios.C4KAF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -268,12 +348,13 @@
 		};
 		667F0AEB1E2AABB4002AFA4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA17D511EABA103FF64175AF /* Pods-Chiropractic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B24U63J96U;
 				INFOPLIST_FILE = Chiropractic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ninja.areios.Chiropractic;
+				PRODUCT_BUNDLE_IDENTIFIER = ninja.areios.C4KAF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
