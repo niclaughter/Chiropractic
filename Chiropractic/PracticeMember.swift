@@ -68,6 +68,8 @@ struct PracticeMember: FirebaseType {
             else { return nil }
         self.name = name
         self.kids = kids
+        self.signatureImage = signatureImage
+        self.signedInDate = Date(timeIntervalSince1970: signedInTimeInterval)
         
         switch adultOrChildString {
         case AdultOrChild.child.rawValue:
@@ -97,8 +99,5 @@ struct PracticeMember: FirebaseType {
         default:
             self.accountType = .user
         }
-        
-        self.signatureImage = signatureImage
-        self.signedInDate = Date(timeIntervalSince1970: signedInTimeInterval)
     }
 }
