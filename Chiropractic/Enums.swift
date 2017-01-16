@@ -20,3 +20,9 @@ enum PaymentType: String {
     case personalInjury = "personal injury"
     case insurance = "insurance"
 }
+
+enum accountType: String {
+    case admin = "admin"
+    case office = "office"
+    case user = "user"
+}
