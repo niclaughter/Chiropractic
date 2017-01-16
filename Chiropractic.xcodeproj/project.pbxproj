@@ -15,6 +15,8 @@
 		66A625881E2ABAAE002F3416 /* PracticeMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A625871E2ABAAE002F3416 /* PracticeMember.swift */; };
 		66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A625891E2ABADC002F3416 /* Enums.swift */; };
 		66A6258C1E2ABBBD002F3416 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A6258B1E2ABBBD002F3416 /* String+Extension.swift */; };
+		66AFAFA91E2D77640013B68F /* OfficeSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFA81E2D77640013B68F /* OfficeSignInViewController.swift */; };
+		66AFAFAB1E2D77790013B68F /* SignatureCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */; };
 		9B81D702FB24B2529E8F3C60 /* Pods_Chiropractic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		66A625871E2ABAAE002F3416 /* PracticeMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeMember.swift; sourceTree = "<group>"; };
 		66A625891E2ABADC002F3416 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		66A6258B1E2ABBBD002F3416 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		66AFAFA81E2D77640013B68F /* OfficeSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficeSignInViewController.swift; sourceTree = "<group>"; };
+		66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureCaptureView.swift; sourceTree = "<group>"; };
 		C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiropractic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E637F459223646C50A5242 /* Pods-Chiropractic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiropractic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic.debug.xcconfig"; sourceTree = "<group>"; };
 		FA17D511EABA103FF64175AF /* Pods-Chiropractic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiropractic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				667F0ADE1E2AABB4002AFA4E /* Main.storyboard */,
+				66AFAFA81E2D77640013B68F /* OfficeSignInViewController.swift */,
+				66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 				66A625881E2ABAAE002F3416 /* PracticeMember.swift in Sources */,
 				66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */,
 				667F0ADB1E2AABB4002AFA4E /* AppDelegate.swift in Sources */,
+				66AFAFAB1E2D77790013B68F /* SignatureCaptureView.swift in Sources */,
+				66AFAFA91E2D77640013B68F /* OfficeSignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
