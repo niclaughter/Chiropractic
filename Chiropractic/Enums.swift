@@ -14,14 +14,14 @@ enum AdultOrChild: String {
 }
 
 enum PaymentType: String {
-    case wellness = "wellness"
-    case cash = "cash"
+    case wellness = "Wellness"
+    case cash = "Cash"
     case hsa = "H.S.A."
-    case personalInjury = "personal injury"
-    case insurance = "insurance"
+    case personalInjury = "Personal Injury"
+    case insurance = "Insurance"
 }
 
-enum accountType: String {
+enum AccountType: String {
     case admin = "admin"
     case office = "office"
     case user = "user"

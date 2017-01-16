@@ -17,6 +17,8 @@
 		66A6258C1E2ABBBD002F3416 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A6258B1E2ABBBD002F3416 /* String+Extension.swift */; };
 		66AFAFA91E2D77640013B68F /* OfficeSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFA81E2D77640013B68F /* OfficeSignInViewController.swift */; };
 		66AFAFAB1E2D77790013B68F /* SignatureCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */; };
+		66AFAFAE1E2D83F20013B68F /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFAD1E2D83F20013B68F /* Keys.swift */; };
+		66AFAFB01E2D84C50013B68F /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */; };
 		9B81D702FB24B2529E8F3C60 /* Pods_Chiropractic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		66A6258B1E2ABBBD002F3416 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		66AFAFA81E2D77640013B68F /* OfficeSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficeSignInViewController.swift; sourceTree = "<group>"; };
 		66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureCaptureView.swift; sourceTree = "<group>"; };
+		66AFAFAD1E2D83F20013B68F /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiropractic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E637F459223646C50A5242 /* Pods-Chiropractic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiropractic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic.debug.xcconfig"; sourceTree = "<group>"; };
 		FA17D511EABA103FF64175AF /* Pods-Chiropractic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiropractic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,10 +97,7 @@
 				66A625851E2AB904002F3416 /* ModelController */,
 				66A625841E2AB8E7002F3416 /* Helper */,
 				66A625831E2AB8E0002F3416 /* ViewController */,
-				667F0AE11E2AABB4002AFA4E /* Assets.xcassets */,
-				667F0AE31E2AABB4002AFA4E /* LaunchScreen.storyboard */,
-				667F0AE61E2AABB4002AFA4E /* Info.plist */,
-				6697980D1E2AB5C9004E29D7 /* GoogleService-Info.plist */,
+				66AFAFAC1E2D83DE0013B68F /* Resources */,
 			);
 			path = Chiropractic;
 			sourceTree = "<group>";
@@ -116,6 +117,8 @@
 			children = (
 				66A625891E2ABADC002F3416 /* Enums.swift */,
 				66A6258B1E2ABBBD002F3416 /* String+Extension.swift */,
+				66AFAFAD1E2D83F20013B68F /* Keys.swift */,
+				66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -133,6 +136,17 @@
 				66A625871E2ABAAE002F3416 /* PracticeMember.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		66AFAFAC1E2D83DE0013B68F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				667F0AE11E2AABB4002AFA4E /* Assets.xcassets */,
+				667F0AE31E2AABB4002AFA4E /* LaunchScreen.storyboard */,
+				667F0AE61E2AABB4002AFA4E /* Info.plist */,
+				6697980D1E2AB5C9004E29D7 /* GoogleService-Info.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,10 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66AFAFB01E2D84C50013B68F /* FirebaseController.swift in Sources */,
 				66A6258C1E2ABBBD002F3416 /* String+Extension.swift in Sources */,
 				66A625881E2ABAAE002F3416 /* PracticeMember.swift in Sources */,
 				66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */,
 				667F0ADB1E2AABB4002AFA4E /* AppDelegate.swift in Sources */,
+				66AFAFAE1E2D83F20013B68F /* Keys.swift in Sources */,
 				66AFAFAB1E2D77790013B68F /* SignatureCaptureView.swift in Sources */,
 				66AFAFA91E2D77640013B68F /* OfficeSignInViewController.swift in Sources */,
 			);
