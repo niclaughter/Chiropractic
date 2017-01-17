@@ -10,8 +10,7 @@ import Foundation
 
 struct Keys {
     
-    /* General Keys */
-    static let PracticeMembersEndpoint = "practiceMembers"
+    /* Model Keys */
     static let nameKey = "name"
     static let kidsKey = "kids"
     static let adultOrChildKey = "adultOrChild"
@@ -20,6 +19,10 @@ struct Keys {
     static let identifierKey = "identifier"
     static let accountTypeKey = "accountType"
     static let signedInDateKey = "signedInDate"
+    
+    /* Firebase Keys */
+    static let practiceMembersEndpoint = "practiceMembers"
+    static let accountsEndpoint = "accounts"
     
     /* URL Strings */
     static let myChiro4KidsURLString = "http://mychiro4kids.com"
