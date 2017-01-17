@@ -10,7 +10,7 @@ import Foundation
 
 struct Keys {
     
-    static let PracticeMembersEndpoint = "practiceMembers"
+    /* Model Keys */
     static let nameKey = "name"
     static let kidsKey = "kids"
     static let adultOrChildKey = "adultOrChild"
@@ -19,4 +19,23 @@ struct Keys {
     static let identifierKey = "identifier"
     static let accountTypeKey = "accountType"
     static let signedInDateKey = "signedInDate"
+    
+    /* Firebase Keys */
+    static let practiceMembersEndpoint = "practiceMembers"
+    static let accountsEndpoint = "accounts"
+    
+    /* URL Strings */
+    static let myChiro4KidsURLString = "http://mychiro4kids.com"
+    
+    /* Reuse Identifiers */
+    static let practiceMemberCellKey = "practiceMemberCell"
+    
+    /* Segue Identifiers */
+    static let toPracticeMemberDetailSegueKey = "toPracticeMemberDetailSegue"
+    
+    /* Storyboard IDs */
+    static let iPadSignInSceneKey = "iPadSignInScene"
+    static let loginSignUpSceneKey = "loginSignUpScene"
+    static let webViewSceneKey = "webViewScene"
+    
 }
