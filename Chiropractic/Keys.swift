@@ -19,4 +19,6 @@ struct Keys {
     static let identifierKey = "identifier"
     static let accountTypeKey = "accountType"
     static let signedInDateKey = "signedInDate"
+    
+    static let myChiro4KidsURLString = "http://mychiro4kids.com"
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bql-mS-jMm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,13 +7,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Login Sign Up Table View Controller-->
         <scene sceneID="K2H-3o-W8T">
             <objects>
-                <tableViewController storyboardIdentifier="loginSignUpScene" id="GRe-z7-sPy" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="loginSignUpScene" id="GRe-z7-sPy" customClass="LoginSignUpTableViewController" customModule="Chiropractic" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="W37-BZ-92G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,9 +150,46 @@
             <point key="canvasLocation" x="-2448.8000000000002" y="-1235.5322338830586"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="gtR-wO-8t9">
+            <objects>
+                <viewController id="bql-mS-jMm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lSj-A1-Mzx"/>
+                        <viewControllerLayoutGuide type="bottom" id="OjK-Ud-y3H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iEn-z2-86c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RZO-DU-V1p">
+                                <rect key="frame" x="16" y="20" width="343" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="nzv-md-RTM"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Today"/>
+                                    <segment title="Yesterday"/>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="RZO-DU-V1p" secondAttribute="trailing" id="9FK-j0-uS4"/>
+                            <constraint firstItem="RZO-DU-V1p" firstAttribute="leading" secondItem="iEn-z2-86c" secondAttribute="leadingMargin" id="S8P-Gh-j8d"/>
+                            <constraint firstItem="RZO-DU-V1p" firstAttribute="top" secondItem="lSj-A1-Mzx" secondAttribute="bottom" id="ZzW-gk-Goo"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1P-I5-9mF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2449" y="-538"/>
+        </scene>
+        <!--Web View Controller-->
         <scene sceneID="Sl2-8O-J7g">
             <objects>
-                <viewController storyboardIdentifier="webViewScene" id="npt-Oa-6J0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webViewScene" id="npt-Oa-6J0" customClass="WebViewController" customModule="Chiropractic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7El-Ck-EXR"/>
                         <viewControllerLayoutGuide type="bottom" id="gpx-A1-UwR"/>
@@ -159,12 +197,51 @@
                     <view key="view" contentMode="scaleToFill" id="FL2-g0-Uwb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppY-fY-YIN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="npt-Oa-6J0" id="T7Y-zw-Q6e"/>
+                                </connections>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfl-X0-74k">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="Kmf-U8-ghx">
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="npt-Oa-6J0" id="Ifh-ap-LiC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HrO-G9-Vnu"/>
+                                    <barButtonItem systemItem="fastForward" id="VwH-26-n9x">
+                                        <connections>
+                                            <action selector="forwardButtonTapped:" destination="npt-Oa-6J0" id="9G1-ya-U3C"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ppY-fY-YIN" firstAttribute="top" secondItem="FL2-g0-Uwb" secondAttribute="top" id="0UX-1v-SEd"/>
+                            <constraint firstItem="cfl-X0-74k" firstAttribute="leading" secondItem="FL2-g0-Uwb" secondAttribute="leading" id="GkY-3c-wOW"/>
+                            <constraint firstItem="cfl-X0-74k" firstAttribute="top" secondItem="ppY-fY-YIN" secondAttribute="bottom" id="Kdd-OY-Kks"/>
+                            <constraint firstItem="gpx-A1-UwR" firstAttribute="top" secondItem="cfl-X0-74k" secondAttribute="bottom" id="QUW-PC-dML"/>
+                            <constraint firstItem="ppY-fY-YIN" firstAttribute="leading" secondItem="FL2-g0-Uwb" secondAttribute="leading" id="Vs5-iV-3NR"/>
+                            <constraint firstAttribute="trailing" secondItem="cfl-X0-74k" secondAttribute="trailing" id="cu5-mx-1F4"/>
+                            <constraint firstAttribute="trailing" secondItem="ppY-fY-YIN" secondAttribute="trailing" id="cxS-LV-XRl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="Kmf-U8-ghx" id="qni-ib-R0I"/>
+                        <outlet property="forwardButton" destination="VwH-26-n9x" id="yMF-Hi-TAW"/>
+                        <outlet property="homePageWebView" destination="ppY-fY-YIN" id="b5t-Hd-nSB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vI3-wV-IV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1393" y="-1236"/>
+            <point key="canvasLocation" x="-1392.8" y="-1235.5322338830586"/>
         </scene>
         <!--Office Sign In View Controller-->
         <scene sceneID="vxB-Ub-3lC">
