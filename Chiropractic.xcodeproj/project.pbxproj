@@ -21,6 +21,8 @@
 		66AFAFB01E2D84C50013B68F /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */; };
 		66C10CA01E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C10C9F1E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift */; };
 		66C10CA21E2EC25300BF4AFF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C10CA11E2EC25300BF4AFF /* WebViewController.swift */; };
+		66C10CA41E2ECB0800BF4AFF /* PracticeMemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C10CA31E2ECB0800BF4AFF /* PracticeMemberListViewController.swift */; };
+		66C10CA61E2ECD6A00BF4AFF /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C10CA51E2ECD6A00BF4AFF /* iPad.storyboard */; };
 		9B81D702FB24B2529E8F3C60 /* Pods_Chiropractic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		66C10C9F1E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignUpTableViewController.swift; sourceTree = "<group>"; };
 		66C10CA11E2EC25300BF4AFF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		66C10CA31E2ECB0800BF4AFF /* PracticeMemberListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeMemberListViewController.swift; sourceTree = "<group>"; };
+		66C10CA51E2ECD6A00BF4AFF /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiropractic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E637F459223646C50A5242 /* Pods-Chiropractic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiropractic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic.debug.xcconfig"; sourceTree = "<group>"; };
 		FA17D511EABA103FF64175AF /* Pods-Chiropractic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiropractic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,8 +103,8 @@
 				667F0ADA1E2AABB4002AFA4E /* AppDelegate.swift */,
 				66A625861E2AB90C002F3416 /* Model */,
 				66A625851E2AB904002F3416 /* ModelController */,
-				66A625841E2AB8E7002F3416 /* Helper */,
 				66A625831E2AB8E0002F3416 /* ViewController */,
+				66A625841E2AB8E7002F3416 /* Helper */,
 				66AFAFAC1E2D83DE0013B68F /* Resources */,
 			);
 			path = Chiropractic;
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				667F0ADE1E2AABB4002AFA4E /* Main.storyboard */,
+				66C10CA51E2ECD6A00BF4AFF /* iPad.storyboard */,
+				66C10CA31E2ECB0800BF4AFF /* PracticeMemberListViewController.swift */,
 				66AFAFA81E2D77640013B68F /* OfficeSignInViewController.swift */,
 				66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */,
 				66C10C9F1E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift */,
@@ -221,6 +227,7 @@
 				667F0AE51E2AABB4002AFA4E /* LaunchScreen.storyboard in Resources */,
 				6697980E1E2AB5C9004E29D7 /* GoogleService-Info.plist in Resources */,
 				667F0AE21E2AABB4002AFA4E /* Assets.xcassets in Resources */,
+				66C10CA61E2ECD6A00BF4AFF /* iPad.storyboard in Resources */,
 				667F0AE01E2AABB4002AFA4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +292,7 @@
 				66A625881E2ABAAE002F3416 /* PracticeMember.swift in Sources */,
 				66C10CA21E2EC25300BF4AFF /* WebViewController.swift in Sources */,
 				66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */,
+				66C10CA41E2ECB0800BF4AFF /* PracticeMemberListViewController.swift in Sources */,
 				667F0ADB1E2AABB4002AFA4E /* AppDelegate.swift in Sources */,
 				66AFAFAE1E2D83F20013B68F /* Keys.swift in Sources */,
 				66C10CA01E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift in Sources */,
