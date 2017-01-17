@@ -32,5 +32,7 @@ struct Keys {
     
     /* Storyboard IDs */
     static let iPadSignInSceneKey = "iPadSignInScene"
+    static let loginSignUpSceneKey = "loginSignUpScene"
+    static let webViewSceneKey = "webViewScene"
     
 }

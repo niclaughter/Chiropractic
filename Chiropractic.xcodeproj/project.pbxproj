@@ -23,6 +23,7 @@
 		66C10CA21E2EC25300BF4AFF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C10CA11E2EC25300BF4AFF /* WebViewController.swift */; };
 		66C10CA41E2ECB0800BF4AFF /* PracticeMemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C10CA31E2ECB0800BF4AFF /* PracticeMemberListViewController.swift */; };
 		66C10CA61E2ECD6A00BF4AFF /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C10CA51E2ECD6A00BF4AFF /* iPad.storyboard */; };
+		66C10CA81E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C10CA71E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift */; };
 		9B81D702FB24B2529E8F3C60 /* Pods_Chiropractic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		66C10CA11E2EC25300BF4AFF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		66C10CA31E2ECB0800BF4AFF /* PracticeMemberListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeMemberListViewController.swift; sourceTree = "<group>"; };
 		66C10CA51E2ECD6A00BF4AFF /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		66C10CA71E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeMemberTableViewCell.swift; sourceTree = "<group>"; };
 		C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiropractic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E637F459223646C50A5242 /* Pods-Chiropractic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiropractic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic.debug.xcconfig"; sourceTree = "<group>"; };
 		FA17D511EABA103FF64175AF /* Pods-Chiropractic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chiropractic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chiropractic/Pods-Chiropractic.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				667F0ADE1E2AABB4002AFA4E /* Main.storyboard */,
 				66C10CA51E2ECD6A00BF4AFF /* iPad.storyboard */,
 				66C10CA31E2ECB0800BF4AFF /* PracticeMemberListViewController.swift */,
+				66C10CA71E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift */,
 				66AFAFA81E2D77640013B68F /* OfficeSignInViewController.swift */,
 				66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */,
 				66C10C9F1E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift */,
@@ -297,6 +300,7 @@
 				66AFAFAE1E2D83F20013B68F /* Keys.swift in Sources */,
 				66C10CA01E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift in Sources */,
 				66AFAFAB1E2D77790013B68F /* SignatureCaptureView.swift in Sources */,
+				66C10CA81E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift in Sources */,
 				66AFAFA91E2D77640013B68F /* OfficeSignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
