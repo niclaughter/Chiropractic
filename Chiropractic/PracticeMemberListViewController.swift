@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PracticeMemberListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -22,6 +23,17 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         <#code#>
+    }
+    
+    // MARK: - Handle account types
+    
+    func showViewControllerForAccountType() {
+        guard let currentUser = FIRAuth.auth()?.currentUser else {
+            let storyboard = UIStoryboard(name: "iPad", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.loginSignUpSceneKey)
+            present(viewController, animated: true, completion: nil)
+        }
+        
     }
 
     /*

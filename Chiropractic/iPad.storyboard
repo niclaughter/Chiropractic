@@ -56,7 +56,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Type:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opc-56-eGf">
-                                <rect key="frame" x="62" y="734" width="114" height="21"/>
+                                <rect key="frame" x="62" y="734" width="113.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -112,7 +112,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GL8-UB-8DV">
-                                <rect key="frame" x="79" y="859" width="78" height="21"/>
+                                <rect key="frame" x="79" y="859.5" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -157,6 +157,14 @@
                             <constraint firstItem="mCz-Ha-NAd" firstAttribute="top" secondItem="Mbk-nJ-vUJ" secondAttribute="bottom" constant="8" id="zgZ-ll-A0P"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adultOrChildSelector" destination="U2e-iY-YLD" id="Zge-2F-DA1"/>
+                        <outlet property="headerImageView" destination="vqK-t8-Ppq" id="lV3-bR-IYa"/>
+                        <outlet property="kidsTextField" destination="5yV-62-Yc0" id="WbD-ZV-T0e"/>
+                        <outlet property="nameTextField" destination="gEh-8w-g2I" id="dmd-1D-gc5"/>
+                        <outlet property="paymentTypeTextField" destination="Mbk-nJ-vUJ" id="Xw5-zt-6qX"/>
+                        <outlet property="signatureView" destination="mCz-Ha-NAd" id="BzH-q7-DvP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lW-I2-jvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
