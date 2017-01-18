@@ -16,10 +16,9 @@ struct PracticeMember: FirebaseType {
     let adultOrChild: AdultOrChild
     let paymentType: PaymentType
     var identifier: String?
-    let accountType: AccountType
     let signatureImage: UIImage
     let signedInDate: Date
-    var endpoint: String = Keys.PracticeMembersEndpoint
+    var endpoint: String = Keys.practiceMembersEndpoint
     
     var dictionaryCopy: [String : Any] {
         return [
@@ -28,7 +27,6 @@ struct PracticeMember: FirebaseType {
             Keys.adultOrChildKey: adultOrChild.rawValue,
             Keys.paymentTypeKey: paymentType.rawValue,
             Keys.signatureDataKey: signatureDataFromImage,
-            Keys.accountTypeKey: accountType.rawValue,
             Keys.signedInDateKey: signedInDate.timeIntervalSince1970
         ]
     }
@@ -52,7 +50,6 @@ struct PracticeMember: FirebaseType {
         self.paymentType = paymentType
         self.signatureImage = signatureImage
         self.identifier = identifier
-        self.accountType = accountType
         self.signedInDate = signedInDate
     }
     
@@ -61,11 +58,11 @@ struct PracticeMember: FirebaseType {
             let kids = dictionary[Keys.kidsKey] as? [String],
             let adultOrChildString = dictionary[Keys.adultOrChildKey] as? String,
             let paymentTypeString = dictionary[Keys.paymentTypeKey] as? String,
-            let accountTypeString = dictionary[Keys.accountTypeKey] as? String,
             let signatureData = dictionary[Keys.signatureDataKey] as? Data,
             let signatureImage = UIImage(data: signatureData),
             let signedInTimeInterval = dictionary[Keys.signedInDateKey] as? TimeInterval
             else { return nil }
+        self.identifier = identifier
         self.name = name
         self.kids = kids
         self.signatureImage = signatureImage
@@ -89,15 +86,6 @@ struct PracticeMember: FirebaseType {
             self.paymentType = .personalInjury
         default:
             self.paymentType = .insurance
-        }
-        
-        switch accountTypeString {
-        case AccountType.admin.rawValue:
-            self.accountType = .admin
-        case AccountType.office.rawValue:
-            self.accountType = .office
-        default:
-            self.accountType = .user
         }
     }
 }
