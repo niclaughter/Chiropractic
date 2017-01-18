@@ -29,6 +29,7 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         default:
             break
         }
+        return true
     }
     
     @IBAction func registerButtonTapped(_ sender: Any) {

@@ -18,11 +18,12 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: Keys.practiceMemberCellKey) as? PracticeMemberTableViewCell ?? UITableViewCell()
+        return cell
     }
     
     // MARK: - Handle account types
@@ -32,6 +33,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
             let storyboard = UIStoryboard(name: "iPad", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: Keys.loginSignUpSceneKey)
             present(viewController, animated: true, completion: nil)
+            return
         }
         
     }
