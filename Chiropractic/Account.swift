@@ -23,7 +23,7 @@ struct Account: FirebaseType {
         ]
     }
     
-    init(email: String, accountType: AccountType, identifier: String = UUID().uuidString) {
+    init(email: String, accountType: AccountType = .user, identifier: String = UUID().uuidString) {
         self.email = email
         self.accountType = accountType
         self.identifier = identifier

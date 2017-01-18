@@ -12,5 +12,8 @@ class AccountController {
     
     static let shared = AccountController()
     
-    
+    func createAccount(withEmail email: String) {
+        var account = Account(email: email)
+        account.save()
+    }
 }
