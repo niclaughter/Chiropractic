@@ -30,7 +30,20 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if FIRAuth.auth()?.currentUser != nil {
+            
+        }
+    }
+    
+    func transitionToCorrectViewController(forAccountType accountType: AccountType) {
+        switch accountType {
+        case .user:
+            break
+        case .admin:
+            break
+        case .office:
+            break
+        }
     }
     
     // MARK: - TextFieldDelegate
