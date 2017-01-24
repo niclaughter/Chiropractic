@@ -204,7 +204,7 @@
         <!--Navigation Controller-->
         <scene sceneID="DMd-4c-9Pu">
             <objects>
-                <navigationController storyboardIdentifier="OfficeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="KL5-iB-Gt7" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="iPadSignInScene" automaticallyAdjustsScrollViewInsets="NO" id="KL5-iB-Gt7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pza-4P-muQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

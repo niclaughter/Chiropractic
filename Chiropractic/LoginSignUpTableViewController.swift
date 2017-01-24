@@ -30,19 +30,27 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if FIRAuth.auth()?.currentUser != nil {
-            
+        if let currentUser = FIRAuth.auth()?.currentUser {
+            AccountController.shared.fetchAccount(withIdentifier: currentUser.uid, completion: { (accountType) in
+                self.transitionToCorrectViewController(forAccountType: accountType)
+            })
         }
     }
     
     func transitionToCorrectViewController(forAccountType accountType: AccountType) {
         switch accountType {
         case .user:
-            break
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.webViewControllerKey)
+            present(viewController, animated: true, completion: nil)
         case .admin:
-            break
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.adminNavigationControllerKey)
+            present(viewController, animated: true, completion: nil)
         case .office:
-            break
+            let storyboard = UIStoryboard(name: "iPad", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.iPadSignInViewControllerKey)
+            present(viewController, animated: true, completion: nil)
         }
     }
     

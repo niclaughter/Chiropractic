@@ -31,7 +31,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     func showViewControllerForAccountType() {
         guard let currentUser = FIRAuth.auth()?.currentUser else {
             let storyboard = UIStoryboard(name: "iPad", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.loginSignUpSceneKey)
+            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.loginSignUpViewControllerKey)
             present(viewController, animated: true, completion: nil)
             return
         }
