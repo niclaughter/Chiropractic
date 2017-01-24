@@ -7,13 +7,20 @@
 //
 
 import Foundation
+import Firebase
 
 class AccountController {
     
     static let shared = AccountController()
     
-    func createAccount(withEmail email: String) {
-        var account = Account(email: email)
+    var account: Account?
+    
+    func createAccount(withEmail email: String, andIdentifier identifier: String) {
+        var account = Account(email: email, identifier: identifier)
         account.save()
+    }
+    
+    func setAccount(withIdentifier identifier: String) {
+        
     }
 }

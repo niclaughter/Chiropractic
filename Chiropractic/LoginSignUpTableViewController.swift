@@ -11,11 +11,29 @@ import FirebaseAuth
 
 class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate {
     
-    // MARK: - Properties
+    // MARK: - Outlets
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var LogInSignUpStateButton: UIButton!
+    @IBOutlet weak var LogInSignUpButton: UIButton!
+    @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var repeatPasswordCell: UITableViewCell!
+    
+    // MARK: - Properties
+    
+    var signUpState = true
+    
+    // MARK: - Lifecycle Functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
+    
+    // MARK: - TextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField.tag {
@@ -32,24 +50,71 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         return true
     }
     
+    // MARK: - TableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if !signUpState && section == 2 {
+            return 0
+        }
+        return super.tableView(tableView, heightForHeaderInSection: section)
+    }
+    
+    // MARK: - UI Functions
+    
+    @IBAction func LogInSignUpStateButtonTapped(_ sender: Any) {
+        
+    }
+    
     @IBAction func registerButtonTapped(_ sender: Any) {
         
     }
     
+    func updateUIAndState() {
+        signUpState = !signUpState
+        repeatPasswordCell.isHidden = !signUpState
+        if signUpState {
+            LogInSignUpStateButton.setTitle("Click here to log in", for: .normal)
+        } else {
+            LogInSignUpStateButton.setTitle("Click here to sign up", for: .normal)
+        }
+        tableView.reloadData()
+    }
+    
+    // MARK: - Firebase Functions
+    
     func registerUser() {
         guard let email = emailTextField.text,
             let password = passwordTextField.text, password == repeatPasswordTextField.text else {
-                displayAlertController(withErrorMessage: "There was a problem with your information. Please try again.")
+                displayAlertController()
                 return
         }
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (_, error) in
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             if let error = error {
                 self.displayAlertController(withErrorMessage: error.localizedDescription)
             }
         })
     }
     
-    func displayAlertController(withErrorMessage errorMessage: String) {
+    func signInUser() {
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text, !password.isEmpty else {
+                displayAlertController()
+                return
+        }
+        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+            if let error = error {
+                self.displayAlertController(withErrorMessage: error.localizedDescription)
+            }
+        })
+    }
+    
+    func createAccount(forUser user: FIRUser, withEmail email: String) {
+        AccountController.shared.createAccount(withEmail: email, andIdentifier: user.uid)
+    }
+    
+    // MARK: - UIAlertController
+    
+    func displayAlertController(withErrorMessage errorMessage: String = "There was a problem with your information. Please try again.") {
         let alertController = UIAlertController(title: "Oops!", message: "There was a problem.\n\(errorMessage)", preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
         alertController.addAction(dismissAction)
