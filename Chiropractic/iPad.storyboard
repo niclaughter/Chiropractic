@@ -139,7 +139,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Signature (Press down until box turns green)" id="WfX-CN-68Q">
+                            <tableViewSection headerTitle="Signature" id="WfX-CN-68Q">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="238" id="80i-Z5-dKd">
                                         <rect key="frame" x="0.0" y="616" width="768" height="238"/>

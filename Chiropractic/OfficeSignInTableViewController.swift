@@ -24,8 +24,9 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         super.viewDidLoad()
         
         signatureView.delegate = self
-        
     }
+    
+    // MARK: - TableViewDelegate
     
     // MARK: - SignatureCaptureDelegate
     
