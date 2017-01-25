@@ -25,4 +25,5 @@ enum AccountType: String {
     case admin = "admin"
     case office = "office"
     case user = "user"
+    case initial = "initial"
 }

@@ -13,7 +13,7 @@
         <!--Login Sign Up Table View Controller-->
         <scene sceneID="K2H-3o-W8T">
             <objects>
-                <tableViewController storyboardIdentifier="loginSignUpScene" id="GRe-z7-sPy" customClass="LoginSignUpTableViewController" customModule="Chiropractic" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="loginSignUpViewController" id="GRe-z7-sPy" customClass="LoginSignUpTableViewController" customModule="Chiropractic" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="W37-BZ-92G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -478,7 +478,7 @@
         <!--Web View Controller-->
         <scene sceneID="Sl2-8O-J7g">
             <objects>
-                <viewController storyboardIdentifier="webViewScene" id="npt-Oa-6J0" customClass="WebViewController" customModule="Chiropractic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webViewController" id="npt-Oa-6J0" customClass="WebViewController" customModule="Chiropractic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7El-Ck-EXR"/>
                         <viewControllerLayoutGuide type="bottom" id="gpx-A1-UwR"/>

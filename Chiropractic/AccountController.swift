@@ -20,14 +20,18 @@ class AccountController {
         account.save()
     }
     
-    func fetchAccount(withIdentifier identifier: String, completion: @escaping (AccountType) -> Void) {
+    func fetchAccount(withIdentifier identifier: String? = nil, completion: @escaping (AccountType) -> Void) {
+        guard let identifier = identifier else {
+            completion(.initial)
+            return
+        }
         let accountRef = FirebaseController.ref.child(Keys.accountsEndpoint).child(identifier)
         accountRef.observeSingleEvent(of: .value, with: { (data) in
-            guard let accountDict = data.value as? [String: Any] else { return }
-            guard let account = Account(dictionary: accountDict, identifier: identifier) else {
-                completion(.user)
+            guard let accountDict = data.value as? [String: Any] else {
+                completion(.initial)
                 return
             }
+            guard let account = Account(dictionary: accountDict, identifier: identifier) else { return }
             completion(account.accountType)
         })
     }

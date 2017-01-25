@@ -32,25 +32,8 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         
         if let currentUser = FIRAuth.auth()?.currentUser {
             AccountController.shared.fetchAccount(withIdentifier: currentUser.uid, completion: { (accountType) in
-                self.transitionToCorrectViewController(forAccountType: accountType)
+                ViewTransitionManager.transitionToCorrectViewController(forAccountType: accountType)
             })
-        }
-    }
-    
-    func transitionToCorrectViewController(forAccountType accountType: AccountType) {
-        switch accountType {
-        case .user:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.webViewControllerKey)
-            present(viewController, animated: true, completion: nil)
-        case .admin:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.adminNavigationControllerKey)
-            present(viewController, animated: true, completion: nil)
-        case .office:
-            let storyboard = UIStoryboard(name: "iPad", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.iPadSignInViewControllerKey)
-            present(viewController, animated: true, completion: nil)
         }
     }
     
@@ -83,11 +66,15 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
     // MARK: - UI Functions
     
     @IBAction func LogInSignUpStateButtonTapped(_ sender: Any) {
-        
+        updateUIAndState()
     }
     
     @IBAction func registerButtonTapped(_ sender: Any) {
-        
+        if signUpState {
+            registerUser()
+        } else {
+            signInUser()
+        }
     }
     
     func updateUIAndState() {
@@ -110,9 +97,8 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
                 return
         }
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-            if let error = error {
-                self.displayAlertController(withErrorMessage: error.localizedDescription)
-            }
+            self.handle(error: error)
+            self.handle(user: user)
         })
     }
     
@@ -123,14 +109,29 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
                 return
         }
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-            if let error = error {
-                self.displayAlertController(withErrorMessage: error.localizedDescription)
-            }
+            self.handle(error: error)
+            self.handle(user: user)
         })
     }
     
-    func createAccount(forUser user: FIRUser, withEmail email: String) {
-        AccountController.shared.createAccount(withEmail: email, andIdentifier: user.uid)
+    func handle(error: Error?) {
+        if let error = error {
+            displayAlertController(withErrorMessage: error.localizedDescription)
+        }
+    }
+    
+    func handle(user: FIRUser?) {
+        guard let user = user,
+            let email = user.email else { return }
+        var accountType: AccountType = .user
+        if signUpState {
+            AccountController.shared.createAccount(withEmail: email, andIdentifier: user.uid)
+        } else {
+            AccountController.shared.fetchAccount(withIdentifier: user.uid, completion: { (returnedAccountType) in
+                accountType = returnedAccountType
+            })
+        }
+        ViewTransitionManager.transitionToCorrectViewController(forAccountType: accountType)
     }
     
     // MARK: - UIAlertController

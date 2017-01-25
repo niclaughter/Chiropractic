@@ -38,9 +38,9 @@ struct Keys {
     static let toPracticeMemberDetailSegueKey = "toPracticeMemberDetailSegue"
     
     /* Storyboard IDs */
-    static let iPadSignInViewControllerKey = "iPadSignInScene"
-    static let loginSignUpViewControllerKey = "loginSignUpScene"
-    static let webViewControllerKey = "webViewScene"
+    static let iPadSignInViewControllerKey = "iPadSignInNavigationController"
+    static let loginSignUpViewControllerKey = "loginSignUpViewController"
+    static let webViewControllerKey = "webViewController"
     static let adminNavigationControllerKey = "adminNavigationController"
     
 }

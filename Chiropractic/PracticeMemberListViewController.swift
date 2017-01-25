@@ -14,7 +14,9 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        AccountController.shared.fetchAccount { (accountType) in
+            ViewTransitionManager.transitionToCorrectViewController(forAccountType: accountType)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,15 +30,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     
     // MARK: - Handle account types
     
-    func showViewControllerForAccountType() {
-        guard let currentUser = FIRAuth.auth()?.currentUser else {
-            let storyboard = UIStoryboard(name: "iPad", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.loginSignUpViewControllerKey)
-            present(viewController, animated: true, completion: nil)
-            return
-        }
-        
-    }
+    
 
     /*
     // MARK: - Navigation
