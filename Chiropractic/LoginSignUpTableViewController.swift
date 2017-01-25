@@ -30,6 +30,9 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let blankView = UIView()
+        tableView.tableFooterView = blankView
+        
         if let currentUser = FIRAuth.auth()?.currentUser {
             AccountController.shared.fetchAccount(withIdentifier: currentUser.uid, completion: { (accountType) in
                 ViewTransitionManager.transitionToCorrectViewController(forAccountType: accountType)

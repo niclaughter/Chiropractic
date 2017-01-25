@@ -175,7 +175,6 @@
                         <outlet property="headerImageView" destination="Oe9-2v-GSZ" id="IJQ-Qn-JWY"/>
                         <outlet property="passwordTextField" destination="1m5-k4-QnP" id="91S-Ic-TeZ"/>
                         <outlet property="repeatPasswordCell" destination="iqX-yA-9L2" id="wX6-oo-hha"/>
-                        <outlet property="repeatPasswordSection" destination="cfW-aG-7Ph" id="9gq-9E-PKb"/>
                         <outlet property="repeatPasswordTextField" destination="gJz-Rd-Ngp" id="6ti-wG-jhd"/>
                     </connections>
                 </tableViewController>
