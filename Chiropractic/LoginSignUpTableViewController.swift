@@ -35,7 +35,7 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         
         if let currentUser = FIRAuth.auth()?.currentUser {
             AccountController.shared.fetchAccount(withIdentifier: currentUser.uid, completion: { (accountType) in
-                ViewTransitionManager.transitionToCorrectViewController(forAccountType: accountType)
+                ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
             })
         }
     }
@@ -69,7 +69,7 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
     // MARK: - UI Functions
     
     @IBAction func LogInSignUpStateButtonTapped(_ sender: Any) {
-        updateUIAndState()
+        self.updateUIAndState()
     }
     
     @IBAction func registerButtonTapped(_ sender: Any) {
@@ -85,8 +85,10 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         repeatPasswordCell.isHidden = !signUpState
         if signUpState {
             LogInSignUpStateButton.setTitle("Click here to log in", for: .normal)
+            LogInSignUpButton.setTitle("Register", for: .normal)
         } else {
             LogInSignUpStateButton.setTitle("Click here to sign up", for: .normal)
+            LogInSignUpButton.setTitle("Sign In", for: .normal)
         }
         tableView.reloadData()
     }
@@ -134,7 +136,7 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
                 accountType = returnedAccountType
             })
         }
-        ViewTransitionManager.transitionToCorrectViewController(forAccountType: accountType)
+        ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
     }
     
     // MARK: - UIAlertController

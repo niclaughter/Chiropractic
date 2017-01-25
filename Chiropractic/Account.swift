@@ -19,7 +19,7 @@ struct Account: FirebaseType {
     var dictionaryCopy: [String : Any] {
         return [
             Keys.emailKey: email,
-            Keys.accountTypeKey: accountType
+            Keys.accountTypeKey: accountType.rawValue
         ]
     }
     

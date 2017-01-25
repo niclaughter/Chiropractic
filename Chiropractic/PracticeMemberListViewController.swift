@@ -20,8 +20,14 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         AccountController.shared.fetchAccount { (accountType) in
-            ViewTransitionManager.transitionToCorrectViewController(forAccountType: accountType)
+            ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
         }
     }
     
