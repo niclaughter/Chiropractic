@@ -139,7 +139,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Signature" id="WfX-CN-68Q">
+                            <tableViewSection headerTitle="Signature (Press down until box turns green)" id="WfX-CN-68Q">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="238" id="80i-Z5-dKd">
                                         <rect key="frame" x="0.0" y="616" width="768" height="238"/>
@@ -150,7 +150,8 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPG-h0-2XM" customClass="SignatureCaptureView" customModule="Chiropractic" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="0.0" width="752" height="237"/>
-                                                    <color key="backgroundColor" red="0.55188906530000004" green="1" blue="0.39053021300000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="1" green="0.037429042764917875" blue="0.0" alpha="0.75398651541095896" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <gestureRecognizers/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -196,6 +197,14 @@
                     <navigationItem key="navigationItem" title="Welcome" id="8kV-zT-SAH">
                         <barButtonItem key="rightBarButtonItem" title="Sign In" id="5Pn-IO-7lJ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="adultOrChildSelector" destination="Qj9-i3-Xtv" id="sMo-Y7-REf"/>
+                        <outlet property="headerImageView" destination="BoO-5p-ddm" id="ZzY-sP-Gg8"/>
+                        <outlet property="kidsTextField" destination="Dfh-qn-Fiq" id="Bl8-u6-1xC"/>
+                        <outlet property="nameTextField" destination="0e8-QZ-bQq" id="pVA-RD-egY"/>
+                        <outlet property="paymentTypeTextField" destination="DQ9-EG-nz1" id="nAc-tw-6yM"/>
+                        <outlet property="signatureView" destination="TPG-h0-2XM" id="s2c-G5-cWK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9QP-K4-iIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

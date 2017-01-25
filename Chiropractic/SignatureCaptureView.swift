@@ -80,7 +80,7 @@ class SignatureCaptureView: UIView {
         }
         
         if let delegate = self.delegate {
-            delegate.startedDrawing!()
+            delegate.startedDrawing()
         }
     }
     
@@ -115,7 +115,7 @@ class SignatureCaptureView: UIView {
         }
         
         if let delegate = self.delegate {
-            delegate.finishedDrawing!()
+            delegate.finishedDrawing()
         }
     }
     
@@ -158,6 +158,6 @@ class SignatureCaptureView: UIView {
 }
 
 @objc protocol SignatureCaptureDelegate: class {
-    @objc optional func startedDrawing()
-    @objc optional func finishedDrawing()
+    @objc func startedDrawing()
+    @objc func finishedDrawing()
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OfficeSignInTableViewController: UITableViewController {
+class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDelegate {
     
     // MARK: - Outlets
     
@@ -18,5 +18,24 @@ class OfficeSignInTableViewController: UITableViewController {
     @IBOutlet weak var adultOrChildSelector: UISegmentedControl!
     @IBOutlet weak var paymentTypeTextField: UITextField!
     @IBOutlet weak var signatureView: SignatureCaptureView!
-
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        signatureView.delegate = self
+        
+    }
+    
+    // MARK: - SignatureCaptureDelegate
+    
+    func startedDrawing() {
+        NSLog("Started drawing")
+        tableView.isScrollEnabled = false
+    }
+    
+    func finishedDrawing() {
+        NSLog("Finished drawing")
+        tableView.isScrollEnabled = true
+    }
 }
