@@ -36,11 +36,11 @@ struct PracticeMember: FirebaseType {
     }
     
     init(name: String,
-         kids: [String] = [],
-         adultOrChild: AdultOrChild = .adult,
-         paymentType: PaymentType = .cash,
+         kids: [String],
+         adultOrChild: AdultOrChild,
+         paymentType: PaymentType,
          signatureImage: UIImage,
-         identifier: String = UUID().uuidString,
+         identifier: String,
          accountType: AccountType = .user,
          signedInDate: Date = Date()) {
         

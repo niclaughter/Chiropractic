@@ -48,6 +48,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="sNL-XF-y7h" id="oBA-Iv-Pdf"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -74,6 +77,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="sNL-XF-y7h" id="STs-jq-jzp"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -96,10 +102,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qj9-i3-Xtv">
-                                                    <rect key="frame" x="8" y="0.0" width="752" height="44"/>
+                                                    <rect key="frame" x="8" y="0.0" width="752" height="44.5"/>
                                                     <segments>
-                                                        <segment title="First"/>
-                                                        <segment title="Second"/>
+                                                        <segment title="18 +"/>
+                                                        <segment title="Under 18"/>
                                                     </segments>
                                                 </segmentedControl>
                                             </subviews>
@@ -127,6 +133,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="sNL-XF-y7h" id="Xec-hQ-uuR"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -210,12 +219,21 @@
                         <outlet property="headerImageView" destination="BoO-5p-ddm" id="ZzY-sP-Gg8"/>
                         <outlet property="kidsTextField" destination="Dfh-qn-Fiq" id="Bl8-u6-1xC"/>
                         <outlet property="nameTextField" destination="0e8-QZ-bQq" id="pVA-RD-egY"/>
+                        <outlet property="paymentTypePickerView" destination="oUk-xU-dPR" id="xKZ-Fc-Lub"/>
                         <outlet property="paymentTypeTextField" destination="DQ9-EG-nz1" id="nAc-tw-6yM"/>
                         <outlet property="signInButton" destination="5Pn-IO-7lJ" id="cLN-jM-rAp"/>
                         <outlet property="signatureView" destination="TPG-h0-2XM" id="s2c-G5-cWK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9QP-K4-iIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pickerView contentMode="scaleToFill" id="oUk-xU-dPR">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <outlet property="dataSource" destination="sNL-XF-y7h" id="K2Z-Vl-BnN"/>
+                        <outlet property="delegate" destination="sNL-XF-y7h" id="Mqb-Kx-aCS"/>
+                    </connections>
+                </pickerView>
             </objects>
             <point key="canvasLocation" x="2313.28125" y="72.65625"/>
         </scene>
