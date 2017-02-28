@@ -18,25 +18,41 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     @IBOutlet weak var adultOrChildSelector: UISegmentedControl!
     @IBOutlet weak var paymentTypeTextField: UITextField!
     @IBOutlet weak var signatureView: SignatureCaptureView!
-    
+    @IBOutlet weak var signInButton: UIBarButtonItem!    
+    @IBOutlet weak var clearSignatureButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        signatureView.delegate = self
+        signatureView.delegate = self        
+        tableView.isScrollEnabled = false
     }
     
-    // MARK: - TableViewDelegate
+    // MARK: - User Actions
+    
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func clearSignatureButtonTapped(_ sender: Any) {
+        signatureView.clear()
+    }
     
     // MARK: - SignatureCaptureDelegate
     
     func startedDrawing() {
         NSLog("Started drawing")
-        tableView.isScrollEnabled = false
     }
     
     func finishedDrawing() {
         NSLog("Finished drawing")
-        tableView.isScrollEnabled = true
+    }
+    
+    // MARK: - Helper Methods
+    
+    func signInPracticeMember() {
+        guard let name = nameTextField.text,
+            let kids = kidsTextField.text else { return }
+        
     }
 }

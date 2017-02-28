@@ -34,8 +34,10 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         tableView.tableFooterView = blankView
         
         if let currentUser = FIRAuth.auth()?.currentUser {
+            setUpLoader(withTitle: "Fetching Profile")
             AccountController.shared.fetchAccount(withIdentifier: currentUser.uid, completion: { (accountType) in
                 ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
+                LoaderView.hide()
             })
         }
     }
@@ -146,5 +148,17 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
         alertController.addAction(dismissAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    // MARK: - Loader
+    
+    func setUpLoader(withTitle title: String) {
+        var config = LoaderView.Config()
+        config.size = 150
+        config.spinnerColor = .blue
+        config.foregroundColor = .black
+        config.foregroundAlpha = 0.5
+        LoaderView.setConfig(config: config)
+        LoaderView.show(title: title, animated: true)
     }
 }

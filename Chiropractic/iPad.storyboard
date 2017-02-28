@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,7 +21,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BoO-5p-ddm">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BoO-5p-ddm">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
                                 </imageView>
                             </subviews>
@@ -176,6 +176,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQd-hl-SgW">
                                                     <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
                                                     <state key="normal" title="Clear Signature"/>
+                                                    <connections>
+                                                        <action selector="clearSignatureButtonTapped:" destination="sNL-XF-y7h" eventType="touchUpInside" id="IHB-eO-ohl"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -195,14 +198,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Welcome" id="8kV-zT-SAH">
-                        <barButtonItem key="rightBarButtonItem" title="Sign In" id="5Pn-IO-7lJ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Sign In" id="5Pn-IO-7lJ">
+                            <connections>
+                                <action selector="signInButtonTapped:" destination="sNL-XF-y7h" id="sb9-dk-05Q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="adultOrChildSelector" destination="Qj9-i3-Xtv" id="sMo-Y7-REf"/>
+                        <outlet property="clearSignatureButton" destination="dQd-hl-SgW" id="2hg-BU-gJP"/>
                         <outlet property="headerImageView" destination="BoO-5p-ddm" id="ZzY-sP-Gg8"/>
                         <outlet property="kidsTextField" destination="Dfh-qn-Fiq" id="Bl8-u6-1xC"/>
                         <outlet property="nameTextField" destination="0e8-QZ-bQq" id="pVA-RD-egY"/>
                         <outlet property="paymentTypeTextField" destination="DQ9-EG-nz1" id="nAc-tw-6yM"/>
+                        <outlet property="signInButton" destination="5Pn-IO-7lJ" id="cLN-jM-rAp"/>
                         <outlet property="signatureView" destination="TPG-h0-2XM" id="s2c-G5-cWK"/>
                     </connections>
                 </tableViewController>

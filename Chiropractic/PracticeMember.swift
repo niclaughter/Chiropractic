@@ -20,7 +20,7 @@ struct PracticeMember: FirebaseType {
     let signedInDate: Date
     var endpoint: String = Keys.practiceMembersEndpoint
     
-    var dictionaryCopy: [String : Any] {
+    var dictionaryCopy: JSONDictionary {
         return [
             Keys.nameKey: name,
             Keys.kidsKey: kids,
@@ -53,7 +53,7 @@ struct PracticeMember: FirebaseType {
         self.signedInDate = signedInDate
     }
     
-    init?(dictionary: [String : Any], identifier: String) {
+    init?(dictionary: JSONDictionary, identifier: String) {
         guard let name = dictionary[Keys.nameKey] as? String,
             let kids = dictionary[Keys.kidsKey] as? [String],
             let adultOrChildString = dictionary[Keys.adultOrChildKey] as? String,

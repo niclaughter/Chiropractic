@@ -44,3 +44,5 @@ struct Keys {
     static let adminNavigationControllerKey = "adminNavigationController"
     
 }
+
+typealias JSONDictionary = [String: Any]

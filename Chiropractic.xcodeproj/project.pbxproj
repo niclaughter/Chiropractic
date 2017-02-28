@@ -17,6 +17,7 @@
 		667F0AE21E2AABB4002AFA4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667F0AE11E2AABB4002AFA4E /* Assets.xcassets */; };
 		667F0AE51E2AABB4002AFA4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667F0AE31E2AABB4002AFA4E /* LaunchScreen.storyboard */; };
 		6697980E1E2AB5C9004E29D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6697980D1E2AB5C9004E29D7 /* GoogleService-Info.plist */; };
+		669946771E64C59E00BC9430 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669946761E64C59E00BC9430 /* LoaderView.swift */; };
 		66A625881E2ABAAE002F3416 /* PracticeMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A625871E2ABAAE002F3416 /* PracticeMember.swift */; };
 		66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A625891E2ABADC002F3416 /* Enums.swift */; };
 		66A6258C1E2ABBBD002F3416 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A6258B1E2ABBBD002F3416 /* String+Extension.swift */; };
@@ -44,6 +45,7 @@
 		667F0AE41E2AABB4002AFA4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		667F0AE61E2AABB4002AFA4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6697980D1E2AB5C9004E29D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		669946761E64C59E00BC9430 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		66A625871E2ABAAE002F3416 /* PracticeMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeMember.swift; sourceTree = "<group>"; };
 		66A625891E2ABADC002F3416 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		66A6258B1E2ABBBD002F3416 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				66AFAFAD1E2D83F20013B68F /* Keys.swift */,
 				66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */,
 				6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */,
+				669946761E64C59E00BC9430 /* LoaderView.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */,
 				660A3CD41E36B3BC00866064 /* OfficeSignInTableViewController.swift in Sources */,
 				6655CB5A1E38267A00C4FC9F /* ViewTransitionManager.swift in Sources */,
+				669946771E64C59E00BC9430 /* LoaderView.swift in Sources */,
 				665014261E30250C006FC465 /* AccountController.swift in Sources */,
 				665014241E3024F4006FC465 /* PracticeMemberController.swift in Sources */,
 				66C10CA41E2ECB0800BF4AFF /* PracticeMemberListViewController.swift in Sources */,
