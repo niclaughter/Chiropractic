@@ -32,7 +32,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     // MARK: - User Actions
     
     @IBAction func signInButtonTapped(_ sender: Any) {
-        
+        signInPracticeMember()
     }
     
     @IBAction func clearSignatureButtonTapped(_ sender: Any) {
@@ -147,11 +147,30 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     
     @objc func donePicker() {
         paymentTypeTextField.resignFirstResponder()
+        tableView.isScrollEnabled = false
     }
     
     func signInPracticeMember() {
         guard let name = nameTextField.text,
-            let kids = kidsTextField.text else { return }
-        
+            let kids = kidsTextField.text,
+            let signature = signatureView.getCroppedSignature() else { return }
+        let adultOrChild: AdultOrChild = adultOrChildSelector.selectedSegmentIndex == 0 ? .adult : .child
+        var paymentType: PaymentType {
+            switch paymentTypePickerView.selectedRow(inComponent: 0) {
+            case 0:
+                return .wellness
+            case 1:
+                return .cash
+            case 2:
+                return .hsa
+            case 3:
+                return .personalInjury
+            case 4:
+                return .insurance
+            default:
+                return .cash
+            }
+        }
+        PracticeMemberController.shared.signInPracticeMember(withName: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, andSignature: signature)
     }
 }

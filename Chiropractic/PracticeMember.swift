@@ -12,7 +12,7 @@ import UIKit
 struct PracticeMember: FirebaseType {
     
     let name: String
-    let kids: [String]
+    let kids: String
     let adultOrChild: AdultOrChild
     let paymentType: PaymentType
     var identifier: String?
@@ -26,17 +26,18 @@ struct PracticeMember: FirebaseType {
             Keys.kidsKey: kids,
             Keys.adultOrChildKey: adultOrChild.rawValue,
             Keys.paymentTypeKey: paymentType.rawValue,
-            Keys.signatureDataKey: signatureDataFromImage,
+            Keys.signatureDataKey: signatureDataFromImageString,
             Keys.signedInDateKey: signedInDate.timeIntervalSince1970
         ]
     }
     
-    var signatureDataFromImage: Data {
-        return UIImageJPEGRepresentation(signatureImage, 0.8) ?? Data()
+    var signatureDataFromImageString: String {
+        let data = UIImageJPEGRepresentation(signatureImage, 0.8) ?? Data()
+        return data.base64EncodedString()
     }
     
     init(name: String,
-         kids: [String],
+         kids: String,
          adultOrChild: AdultOrChild,
          paymentType: PaymentType,
          signatureImage: UIImage,
@@ -55,10 +56,11 @@ struct PracticeMember: FirebaseType {
     
     init?(dictionary: JSONDictionary, identifier: String) {
         guard let name = dictionary[Keys.nameKey] as? String,
-            let kids = dictionary[Keys.kidsKey] as? [String],
+            let kids = dictionary[Keys.kidsKey] as? String,
             let adultOrChildString = dictionary[Keys.adultOrChildKey] as? String,
             let paymentTypeString = dictionary[Keys.paymentTypeKey] as? String,
-            let signatureData = dictionary[Keys.signatureDataKey] as? Data,
+            let signatureDataString = dictionary[Keys.signatureDataKey] as? String,
+            let signatureData = signatureDataString.data(using: .utf8),
             let signatureImage = UIImage(data: signatureData),
             let signedInTimeInterval = dictionary[Keys.signedInDateKey] as? TimeInterval
             else { return nil }

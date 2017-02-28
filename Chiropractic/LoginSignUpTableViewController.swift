@@ -155,7 +155,8 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
     func setUpLoader(withTitle title: String) {
         var config = LoaderView.Config()
         config.size = 150
-        config.spinnerColor = .blue
+        config.spinnerColor = .cyan
+        config.spinnerLineWidth = 3
         config.foregroundColor = .black
         config.foregroundAlpha = 0.5
         LoaderView.setConfig(config: config)
