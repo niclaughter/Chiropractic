@@ -125,27 +125,45 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == paymentTypeTextField {
+            textField.text = PaymentType.wellness.rawValue
+        }
+    }
+    
     // MARK: - Helper Methods
     
     func setUpViews() {
-        paymentTypeTextField.inputView = paymentTypePickerView
-        
         signatureView.delegate = self
         tableView.isScrollEnabled = false
         
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.tintColor = .blue
         toolBar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolBar.setItems([spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         paymentTypeTextField.inputAccessoryView = toolBar
+        paymentTypeTextField.inputView = paymentTypePickerView
+        
+        paymentTypePickerView.selectRow(0, inComponent: 0, animated: false)
+        
+    }
+    
+    func clearViews() {
+        nameTextField.text = nil
+        kidsTextField.text = nil
+        adultOrChildSelector.selectedSegmentIndex = 0
+        paymentTypeTextField.text = nil
+        signatureView.clear()
     }
     
     @objc func donePicker() {
+        let row = paymentTypePickerView.selectedRow(inComponent: 0)
+        paymentTypePickerView.selectRow(row, inComponent: 0, animated: false)
         paymentTypeTextField.resignFirstResponder()
         tableView.isScrollEnabled = false
     }
@@ -153,7 +171,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     func signInPracticeMember() {
         guard let name = nameTextField.text,
             let kids = kidsTextField.text,
-            let signature = signatureView.getCroppedSignature() else { return }
+            let signature = signatureView.getCroppedSignature(scale: 0.25) else { return }
         let adultOrChild: AdultOrChild = adultOrChildSelector.selectedSegmentIndex == 0 ? .adult : .child
         var paymentType: PaymentType {
             switch paymentTypePickerView.selectedRow(inComponent: 0) {
@@ -171,6 +189,16 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
                 return .cash
             }
         }
-        PracticeMemberController.shared.signInPracticeMember(withName: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, andSignature: signature)
+        PracticeMemberController.shared.signInPracticeMember(withName: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, andSignature: signature) { 
+            self.clearViews()
+            self.presentSignInSuccessfulAlertController()
+        }
+    }
+    
+    func presentSignInSuccessfulAlertController() {
+        let alertController = UIAlertController(title: "Sign in successful", message: "Thank you for signing in. You may have a seat if you'd like.", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true, completion: nil)
     }
 }

@@ -25,10 +25,16 @@ class PracticeMemberController {
         return [PracticeMember]()
     }
     
-    func signInPracticeMember(withName name: String, kids: String, adultOrChild: AdultOrChild, paymentType: PaymentType, andSignature signatureImage: UIImage) {
+    func signInPracticeMember(withName name: String,
+                              kids: String,
+                              adultOrChild: AdultOrChild,
+                              paymentType: PaymentType,
+                              andSignature signatureImage: UIImage,
+                              completion: @escaping () -> Void = { _ in }) {
         let practiceMemberIdentifier = FirebaseController.ref.child(Keys.practiceMembersEndpoint).childByAutoId().key
         var practiceMember = PracticeMember(name: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, signatureImage: signatureImage, identifier: practiceMemberIdentifier)
         practiceMember.save()
+        completion()
     }
     
     func observePracticeMembers(completion: @escaping () -> Void = { _ in }) {
