@@ -1,5 +1,5 @@
 //
-//  Keys.swift
+//  Constants.swift
 //  Chiropractic
 //
 //  Created by Nicholas Laughter on 1/16/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Keys {
+struct Constants {
     
     /* Model Keys */
     // MARK: - PracticeMember Keys

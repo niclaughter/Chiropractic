@@ -31,7 +31,7 @@ class PracticeMemberController {
                               paymentType: PaymentType,
                               andSignature signatureImage: UIImage,
                               completion: @escaping () -> Void = { _ in }) {
-        let practiceMemberIdentifier = FirebaseController.ref.child(Keys.practiceMembersEndpoint).childByAutoId().key
+        let practiceMemberIdentifier = FirebaseController.ref.child(Constants.practiceMembersEndpoint).childByAutoId().key
         var practiceMember = PracticeMember(name: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, signatureImage: signatureImage, identifier: practiceMemberIdentifier)
         practiceMember.save()
         completion()
@@ -39,7 +39,7 @@ class PracticeMemberController {
     
     func observePracticeMembers(completion: @escaping () -> Void = { _ in }) {
         defer { completion() }
-        let practiceMembersRef = FirebaseController.ref.child(Keys.practiceMembersEndpoint)
+        let practiceMembersRef = FirebaseController.ref.child(Constants.practiceMembersEndpoint)
         practiceMembersRef.observe(.value, with: { (snapshot) in
             guard let practiceMembersDict = snapshot.value as? [String: JSONDictionary] else { return }
             self.practiceMembers = practiceMembersDict.flatMap { PracticeMember(dictionary: $1, identifier: $0) }

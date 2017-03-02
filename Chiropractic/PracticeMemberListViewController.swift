@@ -36,7 +36,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Keys.practiceMemberCellKey) as? PracticeMemberTableViewCell ?? UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.practiceMemberCellKey) as? PracticeMemberTableViewCell ?? UITableViewCell()
         return cell
     }
     

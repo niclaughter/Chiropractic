@@ -39,6 +39,10 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         signatureView.clear()
     }
     
+    @IBAction func clearFormButtonTapped(_ sender: Any) {
+        presentClearFormAlertController()
+    }
+    
     // MARK: - SignatureCaptureDelegate
     
     func startedDrawing() {
@@ -171,7 +175,10 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     func signInPracticeMember() {
         guard let name = nameTextField.text,
             let kids = kidsTextField.text,
-            let signature = signatureView.getCroppedSignature(scale: 0.25) else { return }
+            let signature = signatureView.getCroppedSignature(scale: 0.25) else {
+                presentErrorSigningInAlertController()
+                return
+        }
         let adultOrChild: AdultOrChild = adultOrChildSelector.selectedSegmentIndex == 0 ? .adult : .child
         var paymentType: PaymentType {
             switch paymentTypePickerView.selectedRow(inComponent: 0) {
@@ -198,6 +205,24 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     func presentSignInSuccessfulAlertController() {
         let alertController = UIAlertController(title: "Sign in successful", message: "Thank you for signing in. You may have a seat if you'd like.", preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentErrorSigningInAlertController() {
+        let alertController = UIAlertController(title: "Oops", message: "There was an error with your info. Please try again.", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentClearFormAlertController() {
+        let alertController = UIAlertController(title: "Clear form?", message: "Would you like to reset the whole form?", preferredStyle: .alert)
+        let clearFormAction = UIAlertAction(title: "Clear form", style: .destructive) { (_) in
+            self.clearViews()
+        }
+        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(clearFormAction)
         alertController.addAction(dismissAction)
         present(alertController, animated: true, completion: nil)
     }

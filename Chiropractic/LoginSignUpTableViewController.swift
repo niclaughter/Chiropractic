@@ -143,7 +143,7 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
     
     // MARK: - UIAlertController
     
-    func displayAlertController(withErrorMessage errorMessage: String = "There was a problem with your information. Please try again.") {
+    func displayAlertController(withErrorMessage errorMessage: String = "Please try again.") {
         let alertController = UIAlertController(title: "Oops!", message: "There was a problem.\n\(errorMessage)", preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
         alertController.addAction(dismissAction)

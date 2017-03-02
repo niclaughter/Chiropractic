@@ -18,16 +18,16 @@ struct PracticeMember: FirebaseType {
     var identifier: String?
     let signatureImage: UIImage
     let signedInDate: Date
-    var endpoint: String = Keys.practiceMembersEndpoint
+    var endpoint: String = Constants.practiceMembersEndpoint
     
     var dictionaryCopy: JSONDictionary {
         return [
-            Keys.nameKey: name,
-            Keys.kidsKey: kids,
-            Keys.adultOrChildKey: adultOrChild.rawValue,
-            Keys.paymentTypeKey: paymentType.rawValue,
-            Keys.signatureDataKey: signatureDataFromImageString,
-            Keys.signedInDateKey: signedInDate.timeIntervalSince1970
+            Constants.nameKey: name,
+            Constants.kidsKey: kids,
+            Constants.adultOrChildKey: adultOrChild.rawValue,
+            Constants.paymentTypeKey: paymentType.rawValue,
+            Constants.signatureDataKey: signatureDataFromImageString,
+            Constants.signedInDateKey: signedInDate.timeIntervalSince1970
         ]
     }
     
@@ -55,14 +55,14 @@ struct PracticeMember: FirebaseType {
     }
     
     init?(dictionary: JSONDictionary, identifier: String) {
-        guard let name = dictionary[Keys.nameKey] as? String,
-            let kids = dictionary[Keys.kidsKey] as? String,
-            let adultOrChildString = dictionary[Keys.adultOrChildKey] as? String,
-            let paymentTypeString = dictionary[Keys.paymentTypeKey] as? String,
-            let signatureDataString = dictionary[Keys.signatureDataKey] as? String,
+        guard let name = dictionary[Constants.nameKey] as? String,
+            let kids = dictionary[Constants.kidsKey] as? String,
+            let adultOrChildString = dictionary[Constants.adultOrChildKey] as? String,
+            let paymentTypeString = dictionary[Constants.paymentTypeKey] as? String,
+            let signatureDataString = dictionary[Constants.signatureDataKey] as? String,
             let signatureData = signatureDataString.data(using: .utf8),
             let signatureImage = UIImage(data: signatureData),
-            let signedInTimeInterval = dictionary[Keys.signedInDateKey] as? TimeInterval
+            let signedInTimeInterval = dictionary[Constants.signedInDateKey] as? TimeInterval
             else { return nil }
         self.identifier = identifier
         self.name = name

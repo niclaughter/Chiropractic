@@ -111,17 +111,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qj9-i3-Xtv">
-                                                    <rect key="frame" x="8" y="0.0" width="752" height="44.5"/>
+                                                    <rect key="frame" x="8" y="1" width="752" height="42.5"/>
                                                     <segments>
                                                         <segment title="18 +"/>
                                                         <segment title="Under 18"/>
                                                     </segments>
+                                                    <color key="tintColor" red="0.098039215690000001" green="0.46274509800000002" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Qj9-i3-Xtv" firstAttribute="top" secondItem="1l2-Gb-p9U" secondAttribute="top" id="d2V-3l-OhY"/>
+                                                <constraint firstItem="Qj9-i3-Xtv" firstAttribute="top" secondItem="1l2-Gb-p9U" secondAttribute="top" constant="1" id="d2V-3l-OhY"/>
                                                 <constraint firstItem="Qj9-i3-Xtv" firstAttribute="leading" secondItem="1l2-Gb-p9U" secondAttribute="leading" constant="8" id="hVi-E4-mrs"/>
-                                                <constraint firstAttribute="bottom" secondItem="Qj9-i3-Xtv" secondAttribute="bottom" id="kua-ro-5ha"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qj9-i3-Xtv" secondAttribute="bottom" constant="1" id="kua-ro-5ha"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qj9-i3-Xtv" secondAttribute="trailing" constant="8" id="ugB-hu-PR3"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -188,22 +189,38 @@
                                         <rect key="frame" x="0.0" y="854" width="768" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z7i-EQ-nbg" id="qAn-1T-Nse">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="66.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQd-hl-SgW">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hGj-eb-zpP">
                                                     <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
-                                                    <state key="normal" title="Clear Signature"/>
-                                                    <connections>
-                                                        <action selector="clearSignatureButtonTapped:" destination="sNL-XF-y7h" eventType="touchUpInside" id="IHB-eO-ohl"/>
-                                                    </connections>
-                                                </button>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQd-hl-SgW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="66"/>
+                                                            <state key="normal" title="Clear Signature">
+                                                                <color key="titleColor" red="0.98039215690000003" green="0.43137254899999999" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="clearSignatureButtonTapped:" destination="sNL-XF-y7h" eventType="touchUpInside" id="IHB-eO-ohl"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pua-Ky-Nui">
+                                                            <rect key="frame" x="384" y="0.0" width="384" height="66"/>
+                                                            <state key="normal" title="Clear Form">
+                                                                <color key="titleColor" red="0.98039215690000003" green="0.43137254899999999" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="clearFormButtonTapped:" destination="sNL-XF-y7h" eventType="touchUpInside" id="YF7-LQ-LsY"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="dQd-hl-SgW" secondAttribute="trailing" id="K15-ZS-44G"/>
-                                                <constraint firstItem="dQd-hl-SgW" firstAttribute="top" secondItem="qAn-1T-Nse" secondAttribute="top" id="QD6-I7-2MA"/>
-                                                <constraint firstItem="dQd-hl-SgW" firstAttribute="leading" secondItem="qAn-1T-Nse" secondAttribute="leading" id="bLb-mj-0BA"/>
-                                                <constraint firstAttribute="bottom" secondItem="dQd-hl-SgW" secondAttribute="bottom" id="lxB-Lz-JZv"/>
+                                                <constraint firstItem="hGj-eb-zpP" firstAttribute="leading" secondItem="qAn-1T-Nse" secondAttribute="leading" id="Xel-iC-S6y"/>
+                                                <constraint firstAttribute="bottom" secondItem="hGj-eb-zpP" secondAttribute="bottom" id="gIJ-dB-g4y"/>
+                                                <constraint firstItem="hGj-eb-zpP" firstAttribute="top" secondItem="qAn-1T-Nse" secondAttribute="top" id="jl7-0j-mL3"/>
+                                                <constraint firstAttribute="trailing" secondItem="hGj-eb-zpP" secondAttribute="trailing" id="mVg-TG-8eq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -217,6 +234,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Welcome" id="8kV-zT-SAH">
                         <barButtonItem key="rightBarButtonItem" title="Sign In" id="5Pn-IO-7lJ">
+                            <color key="tintColor" red="0.098039215690000001" green="0.46274509800000002" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="signInButtonTapped:" destination="sNL-XF-y7h" id="sb9-dk-05Q"/>
                             </connections>
