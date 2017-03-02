@@ -22,11 +22,12 @@
                             <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BoO-5p-ddm">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BoO-5p-ddm">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiro-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="RMj-sx-3fj">
                                     <rect key="frame" x="292" y="222" width="184" height="78"/>
+                                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="RMj-sx-3fj" secondAttribute="height" multiplier="92:39" id="d7m-qJ-2eb"/>
                                     </constraints>
@@ -189,7 +190,7 @@
                                         <rect key="frame" x="0.0" y="854" width="768" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z7i-EQ-nbg" id="qAn-1T-Nse">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="66.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hGj-eb-zpP">
@@ -243,7 +244,7 @@
                     <connections>
                         <outlet property="adultOrChildSelector" destination="Qj9-i3-Xtv" id="sMo-Y7-REf"/>
                         <outlet property="clearSignatureButton" destination="dQd-hl-SgW" id="2hg-BU-gJP"/>
-                        <outlet property="headerImageView" destination="BoO-5p-ddm" id="ZzY-sP-Gg8"/>
+                        <outlet property="headerImageView" destination="BoO-5p-ddm" id="KyK-Ft-Kmx"/>
                         <outlet property="kidsTextField" destination="Dfh-qn-Fiq" id="Bl8-u6-1xC"/>
                         <outlet property="nameTextField" destination="0e8-QZ-bQq" id="pVA-RD-egY"/>
                         <outlet property="paymentTypePickerView" destination="oUk-xU-dPR" id="xKZ-Fc-Lub"/>

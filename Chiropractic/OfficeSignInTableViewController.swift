@@ -12,7 +12,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     
     // MARK: - Outlets
     
-    @IBOutlet var headerImageView: UIView!
+    @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var kidsTextField: UITextField!
     @IBOutlet weak var adultOrChildSelector: UISegmentedControl!
@@ -155,6 +155,13 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         
         paymentTypePickerView.selectRow(0, inComponent: 0, animated: false)
         
+        headerImageView.animationImages = ImagesHelper.imagesArray
+        headerImageView.animationDuration = TimeInterval(3)
+        headerImageView.startAnimating()
+    }
+    
+    func animateImageView() {
+
     }
     
     func clearViews() {
