@@ -22,7 +22,7 @@ protocol FirebaseType {
     var identifier: String? { get set }
     var dictionaryCopy: [String: Any] { get }
     
-    init?(dictionary: [String: Any], identifier: String)
+    init?(dictionary: JSONDictionary, identifier: String)
     
     mutating func save()
     func delete()

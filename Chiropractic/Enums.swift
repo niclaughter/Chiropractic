@@ -19,6 +19,8 @@ enum PaymentType: String {
     case hsa = "H.S.A."
     case personalInjury = "Personal Injury"
     case insurance = "Insurance"
+    
+    static var count: Int { return PaymentType.insurance.hashValue + 1 }
 }
 
 enum AccountType: String {

@@ -15,5 +15,4 @@ class PracticeMemberTableViewCell: UITableViewCell {
         
         
     }
-
 }

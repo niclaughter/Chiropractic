@@ -14,19 +14,19 @@ class ViewTransitionManager {
         switch accountType {
         case .user:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.webViewControllerKey)
+            let viewController = storyboard.instantiateViewController(withIdentifier: Constants.webViewControllerKey)
             fromViewController.present(viewController, animated: true, completion: nil)
         case .admin:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.adminNavigationControllerKey)
+            let viewController = storyboard.instantiateViewController(withIdentifier: Constants.adminNavigationControllerKey)
             fromViewController.present(viewController, animated: true, completion: nil)
         case .office:
             let storyboard = UIStoryboard(name: "iPad", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.iPadSignInViewControllerKey)
+            let viewController = storyboard.instantiateViewController(withIdentifier: Constants.iPadSignInViewControllerKey)
             fromViewController.present(viewController, animated: true, completion: nil)
         case .initial:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: Keys.loginSignUpViewControllerKey)
+            let viewController = storyboard.instantiateViewController(withIdentifier: Constants.loginSignUpViewControllerKey)
             fromViewController.present(viewController, animated: true, completion: nil)
         }
     }

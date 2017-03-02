@@ -12,35 +12,36 @@ import UIKit
 struct PracticeMember: FirebaseType {
     
     let name: String
-    let kids: [String]
+    let kids: String
     let adultOrChild: AdultOrChild
     let paymentType: PaymentType
     var identifier: String?
     let signatureImage: UIImage
     let signedInDate: Date
-    var endpoint: String = Keys.practiceMembersEndpoint
+    var endpoint: String = Constants.practiceMembersEndpoint
     
-    var dictionaryCopy: [String : Any] {
+    var dictionaryCopy: JSONDictionary {
         return [
-            Keys.nameKey: name,
-            Keys.kidsKey: kids,
-            Keys.adultOrChildKey: adultOrChild.rawValue,
-            Keys.paymentTypeKey: paymentType.rawValue,
-            Keys.signatureDataKey: signatureDataFromImage,
-            Keys.signedInDateKey: signedInDate.timeIntervalSince1970
+            Constants.nameKey: name,
+            Constants.kidsKey: kids,
+            Constants.adultOrChildKey: adultOrChild.rawValue,
+            Constants.paymentTypeKey: paymentType.rawValue,
+            Constants.signatureDataKey: signatureDataFromImageString,
+            Constants.signedInDateKey: signedInDate.timeIntervalSince1970
         ]
     }
     
-    var signatureDataFromImage: Data {
-        return UIImageJPEGRepresentation(signatureImage, 0.8) ?? Data()
+    var signatureDataFromImageString: String {
+        let data = UIImageJPEGRepresentation(signatureImage, 0.8) ?? Data()
+        return data.base64EncodedString()
     }
     
     init(name: String,
-         kids: [String] = [],
-         adultOrChild: AdultOrChild = .adult,
-         paymentType: PaymentType = .cash,
+         kids: String,
+         adultOrChild: AdultOrChild,
+         paymentType: PaymentType,
          signatureImage: UIImage,
-         identifier: String = UUID().uuidString,
+         identifier: String,
          accountType: AccountType = .user,
          signedInDate: Date = Date()) {
         
@@ -53,14 +54,15 @@ struct PracticeMember: FirebaseType {
         self.signedInDate = signedInDate
     }
     
-    init?(dictionary: [String : Any], identifier: String) {
-        guard let name = dictionary[Keys.nameKey] as? String,
-            let kids = dictionary[Keys.kidsKey] as? [String],
-            let adultOrChildString = dictionary[Keys.adultOrChildKey] as? String,
-            let paymentTypeString = dictionary[Keys.paymentTypeKey] as? String,
-            let signatureData = dictionary[Keys.signatureDataKey] as? Data,
+    init?(dictionary: JSONDictionary, identifier: String) {
+        guard let name = dictionary[Constants.nameKey] as? String,
+            let kids = dictionary[Constants.kidsKey] as? String,
+            let adultOrChildString = dictionary[Constants.adultOrChildKey] as? String,
+            let paymentTypeString = dictionary[Constants.paymentTypeKey] as? String,
+            let signatureDataString = dictionary[Constants.signatureDataKey] as? String,
+            let signatureData = signatureDataString.data(using: .utf8),
             let signatureImage = UIImage(data: signatureData),
-            let signedInTimeInterval = dictionary[Keys.signedInDateKey] as? TimeInterval
+            let signedInTimeInterval = dictionary[Constants.signedInDateKey] as? TimeInterval
             else { return nil }
         self.identifier = identifier
         self.name = name
