@@ -32,14 +32,6 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         
         let blankView = UIView()
         tableView.tableFooterView = blankView
-        
-        if let currentUser = FIRAuth.auth()?.currentUser {
-            setUpLoader(withTitle: "Fetching Profile")
-            AccountController.shared.fetchAccount(withIdentifier: currentUser.uid, completion: { (accountType) in
-                ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
-                LoaderView.hide()
-            })
-        }
     }
     
     // MARK: - TextFieldDelegate
@@ -103,9 +95,11 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
                 displayAlertController()
                 return
         }
+        setUpLoader(withTitle: "Registering Account")
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             self.handle(error: error)
             self.handle(user: user)
+            LoaderView.hide()
         })
     }
     
@@ -115,9 +109,11 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
                 displayAlertController()
                 return
         }
+        setUpLoader(withTitle: "Logging In")
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             self.handle(error: error)
             self.handle(user: user)
+            LoaderView.hide()
         })
     }
     

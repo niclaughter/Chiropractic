@@ -156,12 +156,9 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         paymentTypePickerView.selectRow(0, inComponent: 0, animated: false)
         
         headerImageView.animationImages = ImagesHelper.imagesArray
-        headerImageView.animationDuration = TimeInterval(3)
+        headerImageView.animationDuration = 30
         headerImageView.startAnimating()
-    }
-    
-    func animateImageView() {
-
+        headerImageView.layer.masksToBounds = true
     }
     
     func clearViews() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oox-Ef-LN0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="req-r0-Ogd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -298,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1P-I5-9mF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1509.5999999999999" y="-538.38080959520244"/>
+            <point key="canvasLocation" x="-570.39999999999998" y="-538.38080959520244"/>
         </scene>
         <!--Title-->
         <scene sceneID="G63-K3-fpF">
@@ -472,7 +472,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUB-3b-2oz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-602.39999999999998" y="-538.38080959520244"/>
+            <point key="canvasLocation" x="336.80000000000001" y="-538.38080959520244"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="Sl2-8O-J7g">
@@ -531,6 +531,36 @@
             </objects>
             <point key="canvasLocation" x="-1511" y="-1397"/>
         </scene>
+        <!--Initial View Controller-->
+        <scene sceneID="rVk-L5-CJ1">
+            <objects>
+                <viewController id="2Bf-LW-fa0" customClass="InitialViewController" customModule="Chiropractic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ePa-1G-Cn5"/>
+                        <viewControllerLayoutGuide type="bottom" id="xjg-FH-kZU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oXh-s3-uWE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="female-yoga" translatesAutoresizingMaskIntoConstraints="NO" id="l4Y-SK-xVX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l4Y-SK-xVX" firstAttribute="leading" secondItem="oXh-s3-uWE" secondAttribute="leading" id="8lP-Jt-Khg"/>
+                            <constraint firstItem="l4Y-SK-xVX" firstAttribute="top" secondItem="ePa-1G-Cn5" secondAttribute="bottom" id="Zes-9W-bl5"/>
+                            <constraint firstItem="xjg-FH-kZU" firstAttribute="top" secondItem="l4Y-SK-xVX" secondAttribute="bottom" id="emg-Ts-EEp"/>
+                            <constraint firstAttribute="trailing" secondItem="l4Y-SK-xVX" secondAttribute="trailing" id="hI3-Zw-INY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LCW-O0-h3D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOC-6j-2CH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2520.8000000000002" y="-538.38080959520244"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lZO-A8-qCJ">
             <objects>
@@ -547,7 +577,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4z7-Iw-6mt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2448.8000000000002" y="-538.38080959520244"/>
+            <point key="canvasLocation" x="-1509.5999999999999" y="-538.38080959520244"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Aa8-oO-nzl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="req-r0-Ogd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vT8-Qv-hb7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2Bf-LW-fa0" kind="relationship" relationship="rootViewController" id="6Td-4f-I4U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nq-f3-Xig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3460" y="-538.38080959520244"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="female-yoga" width="16" height="16"/>
+    </resources>
 </document>
