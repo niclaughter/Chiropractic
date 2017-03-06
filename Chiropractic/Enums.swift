@@ -30,3 +30,10 @@ enum AccountType: String {
     case user = "user"
     case initial = "initial"
 }
+
+enum Timeframe {
+    case today
+    case yesterday
+    case week
+    case month
+}

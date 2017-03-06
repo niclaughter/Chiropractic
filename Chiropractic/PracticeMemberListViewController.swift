@@ -15,7 +15,11 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     
     @IBOutlet weak var timeframeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var practiceMemberListTableView: UITableView!
-    var practiceMembersToDisplay = [PracticeMember]()
+    var practiceMembersToDisplay = [PracticeMember]() {
+        didSet {
+            practiceMemberListTableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,18 +44,22 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
     // MARK: - UI Actions
     
     @IBAction func segmentedControlSegmentChanged(_ sender: Any) {
         switch timeframeSegmentedControl.selectedSegmentIndex {
         case 0:
-            break
+            getPracticeMembers(forTimeframe: .today)
         case 1:
-            break
+            getPracticeMembers(forTimeframe: .yesterday)
         case 2:
-            break
+            getPracticeMembers(forTimeframe: .week)
         case 3:
-            break
+            getPracticeMembers(forTimeframe: .month)
         default:
             break
         }
@@ -65,6 +73,9 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     
     func practiceMembersUpdated() {
         DispatchQueue.main.async {
+            if self.practiceMembersToDisplay.count == 0 {
+                self.getPracticeMembers(forTimeframe: .today)
+            }
             self.practiceMemberListTableView.reloadData()
         }
     }
@@ -85,9 +96,22 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
 
     // MARK: - Helper Methods
     
-    func getPracticeMembers(inCalendarUnit calendarUnit: NSCalendar.Unit) {
-        if calendarUnit == .day {
-            let members = PracticeMemberController.shared.practiceMembers
+    func getPracticeMembers(forTimeframe timeframe: Timeframe) {
+        let today = Date()
+        let calendar = Calendar.current
+        switch timeframe {
+        case .today:
+            practiceMembersToDisplay = PracticeMemberController.shared.practiceMembers.filter { calendar.isDateInToday($0.signedInDate) }
+        case .yesterday:
+            practiceMembersToDisplay = PracticeMemberController.shared.practiceMembers.filter { calendar.isDateInYesterday($0.signedInDate) }
+        case .week:
+            practiceMembersToDisplay = PracticeMemberController.shared.practiceMembers.filter { calendar.isDate($0.signedInDate, equalTo: today, toGranularity: .weekOfMonth) }
+        case .month:
+            practiceMembersToDisplay = PracticeMemberController.shared.practiceMembers.filter { calendar.isDate($0.signedInDate, equalTo: today, toGranularity: .month) }
         }
+    }
+    
+    func presentComingSoonAlertController() {
+        
     }
 }

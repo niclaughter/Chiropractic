@@ -20,12 +20,6 @@ class PracticeMemberController {
     }
     var delegate: PracticeMembersControllerDelegate?
     
-    func getMembersSignedIn(sineDate date: Date) -> [PracticeMember] {
-        
-        // TODO: - Implement and replace return
-        return [PracticeMember]()
-    }
-    
     // MARK: - Functions
     
     init() {

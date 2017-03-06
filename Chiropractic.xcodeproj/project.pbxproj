@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66027D821E6E15BA00BB4D65 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66027D811E6E15BA00BB4D65 /* DocumentManager.swift */; };
 		66052E091E68E463008EF49F /* OfficeSignInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66052E081E68E463008EF49F /* OfficeSignInTableViewController.swift */; };
 		665014221E30205D006FC465 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665014211E30205D006FC465 /* Account.swift */; };
 		665014241E3024F4006FC465 /* PracticeMemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665014231E3024F4006FC465 /* PracticeMemberController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66027D811E6E15BA00BB4D65 /* DocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		66052E081E68E463008EF49F /* OfficeSignInTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OfficeSignInTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		665014211E30205D006FC465 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Account.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		665014231E3024F4006FC465 /* PracticeMemberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PracticeMemberController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -150,6 +152,7 @@
 				66DA6CD31E68E266003A6174 /* ImagesHelper.swift */,
 				66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */,
 				6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */,
+				66027D811E6E15BA00BB4D65 /* DocumentManager.swift */,
 				669946761E64C59E00BC9430 /* LoaderView.swift */,
 			);
 			name = Helper;
@@ -341,6 +344,7 @@
 				665014221E30205D006FC465 /* Account.swift in Sources */,
 				66A6258C1E2ABBBD002F3416 /* String+Extension.swift in Sources */,
 				66A625881E2ABAAE002F3416 /* PracticeMember.swift in Sources */,
+				66027D821E6E15BA00BB4D65 /* DocumentManager.swift in Sources */,
 				66C10CA21E2EC25300BF4AFF /* WebViewController.swift in Sources */,
 				66DA6CD21E68BABC003A6174 /* PracticeMemberDetailTableViewController.swift in Sources */,
 				66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */,
