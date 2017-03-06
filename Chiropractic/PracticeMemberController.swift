@@ -38,10 +38,10 @@ class PracticeMemberController {
                               kids: String,
                               adultOrChild: AdultOrChild,
                               paymentType: PaymentType,
-                              andSignature signatureImage: UIImage,
+                              signatureDownloadURL: URL,
+                              andIdentifier identifier: String,
                               completion: @escaping () -> Void = { _ in }) {
-        let practiceMemberIdentifier = FirebaseController.databaseRef.child(Constants.practiceMembersEndpoint).childByAutoId().key
-        var practiceMember = PracticeMember(name: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, identifier: practiceMemberIdentifier)
+        var practiceMember = PracticeMember(name: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, identifier: identifier, signatureDownloadURL: signatureDownloadURL)
         practiceMember.save()
         completion()
     }

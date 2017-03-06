@@ -19,6 +19,7 @@ struct Constants {
     static let signatureDataStringKey = "signatureDataString"
     static let signedInDateKey = "signedInDate"
     static let identifierKey = "identifier"
+    static let signatureDownloadURLKey = "signatureDownloadURL"
     
     // MARK: - Account Keys
     static let emailKey = "email"

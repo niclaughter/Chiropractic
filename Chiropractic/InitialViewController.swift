@@ -35,7 +35,7 @@ class InitialViewController: UIViewController {
     func setUpLoader(withTitle title: String) {
         var config = LoaderView.Config()
         config.size = 150
-        config.spinnerColor = .cyan
+        config.spinnerColor = .orange
         config.spinnerLineWidth = 3
         config.foregroundColor = .black
         config.foregroundAlpha = 0.5
