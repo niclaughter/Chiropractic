@@ -12,6 +12,7 @@ import UIKit
 class PracticeMemberController {
     
     static let shared = PracticeMemberController()
+    
     var practiceMembers = [PracticeMember]() {
         didSet {
             delegate?.practiceMembersUpdated()
@@ -23,6 +24,14 @@ class PracticeMemberController {
         
         // TODO: - Implement and replace return
         return [PracticeMember]()
+    }
+    
+    // MARK: - Functions
+    
+    init() {
+        observePracticeMembers {
+            NSLog("Practice members being observed.")
+        }
     }
     
     func signInPracticeMember(withName name: String,

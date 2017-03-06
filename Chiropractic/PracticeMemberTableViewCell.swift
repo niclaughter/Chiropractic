@@ -9,10 +9,25 @@
 import UIKit
 
 class PracticeMemberTableViewCell: UITableViewCell {
+    
+    // MARK: - Properties
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        
+    var practiceMember: PracticeMember? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    @IBOutlet weak var practiceMemberNameLabel: UILabel!
+    @IBOutlet weak var practiceMemberDetailLabel: UILabel!
+    @IBOutlet weak var practiceMemberSignatureImageView: UIImageView!
+    
+    // MARK: - Helpers
+    
+    func updateViews() {
+        guard let practiceMember = practiceMember else { return }
+        practiceMemberNameLabel.text = practiceMember.name
+        practiceMemberDetailLabel.text = !practiceMember.kids.isEmpty ? practiceMember.kids : practiceMember.adultOrChild.rawValue
+        practiceMemberSignatureImageView.image = practiceMember.signatureImage
     }
 }

@@ -205,6 +205,9 @@
                                     <segment title="Week"/>
                                     <segment title="Month"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlSegmentChanged:" destination="bql-mS-jMm" eventType="valueChanged" id="UnC-6X-b3G"/>
+                                </connections>
                             </segmentedControl>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8aR-O5-hBc">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -213,7 +216,11 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MIr-SG-Gde"/>
-                                    <barButtonItem title="Print List" id="0Va-zS-DRN"/>
+                                    <barButtonItem title="Print List" id="0Va-zS-DRN">
+                                        <connections>
+                                            <action selector="printListButtonTapped:" destination="bql-mS-jMm" id="PDc-fM-E12"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Uqb-m9-uVR"/>
                                 </items>
                             </toolbar>
@@ -270,6 +277,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="practiceMemberDetailLabel" destination="2Cp-mB-39U" id="BT8-UN-cCt"/>
+                                            <outlet property="practiceMemberNameLabel" destination="09c-5w-evi" id="mp1-a0-aWg"/>
+                                            <outlet property="practiceMemberSignatureImageView" destination="Tyl-Ts-vkx" id="FMq-aY-pai"/>
                                             <segue destination="YGt-Zc-3uR" kind="show" id="j4f-l0-lBD"/>
                                         </connections>
                                     </tableViewCell>
@@ -295,6 +305,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZoD-ez-KgE"/>
+                    <connections>
+                        <outlet property="practiceMemberListTableView" destination="GCj-qq-vJZ" id="hvR-88-N1D"/>
+                        <outlet property="timeframeSegmentedControl" destination="RZO-DU-V1p" id="oEo-AJ-8v1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1P-I5-9mF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -469,6 +483,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="blX-y3-jkW"/>
+                    <connections>
+                        <outlet property="adultOrChildLabel" destination="TO3-gI-V0V" id="Kfz-k6-SIH"/>
+                        <outlet property="kidsNamesLabel" destination="Iab-se-GOU" id="Ip1-Zb-crb"/>
+                        <outlet property="nameLabel" destination="ClP-0F-vJS" id="2ru-yD-teK"/>
+                        <outlet property="paymentTypeLabel" destination="hRx-og-dx5" id="B4W-Ib-f2n"/>
+                        <outlet property="signatureImageView" destination="ELR-cb-p75" id="Jlo-Kx-Ek2"/>
+                        <outlet property="timeCheckedInLabel" destination="Lgy-Ns-Rlc" id="dqb-a3-W42"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUB-3b-2oz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

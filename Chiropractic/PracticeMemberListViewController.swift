@@ -9,40 +9,44 @@
 import UIKit
 import Firebase
 
-class PracticeMemberListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PracticeMemberListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PracticeMembersControllerDelegate {
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var timeframeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var practiceMemberListTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        AccountController.shared.fetchAccount { (accountType) in
-            ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
-        }
+        PracticeMemberController.shared.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return PracticeMemberController.shared.practiceMembers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.practiceMemberCellKey) as? PracticeMemberTableViewCell ?? UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.practiceMemberCellKey) as? PracticeMemberTableViewCell ?? PracticeMemberTableViewCell()
+        let practiceMember = PracticeMemberController.shared.practiceMembers[indexPath.row]
+        cell.practiceMember = practiceMember
         return cell
     }
     
-    // MARK: - Handle account types
+    @IBAction func segmentedControlSegmentChanged(_ sender: Any) {
+        
+    }
     
+    @IBAction func printListButtonTapped(_ sender: Any) {
+    }
     
+    // MARK: - Practice Members Controller Delegate
+    
+    func practiceMembersUpdated() {
+        DispatchQueue.main.async {
+            self.practiceMemberListTableView.reloadData()
+        }
+    }
 
     /*
     // MARK: - Navigation
