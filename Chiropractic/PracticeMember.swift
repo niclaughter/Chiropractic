@@ -17,7 +17,6 @@ struct PracticeMember: FirebaseType {
     let paymentType: PaymentType
     var identifier: String?
     let signedInDate: Date
-    let signatureDownloadURL: URL
     var endpoint: String = Constants.practiceMembersEndpoint
     
     var dictionaryCopy: JSONDictionary {
@@ -36,14 +35,12 @@ struct PracticeMember: FirebaseType {
          paymentType: PaymentType,
          identifier: String,
          accountType: AccountType = .user,
-         signatureDownloadURL: URL,
          signedInDate: Date = Date()) {
         self.name = name
         self.kids = kids
         self.adultOrChild = adultOrChild
         self.paymentType = paymentType
         self.identifier = identifier
-        self.signatureDownloadURL = signatureDownloadURL
         self.signedInDate = signedInDate
     }
     
@@ -52,13 +49,11 @@ struct PracticeMember: FirebaseType {
             let kids = dictionary[Constants.kidsKey] as? String,
             let adultOrChildString = dictionary[Constants.adultOrChildKey] as? String,
             let paymentTypeString = dictionary[Constants.paymentTypeKey] as? String,
-            let signatureDownloadURL = dictionary[Constants.signatureDownloadURLKey] as? URL,
             let signedInTimeInterval = dictionary[Constants.signedInDateKey] as? TimeInterval
             else { return nil }
         self.identifier = identifier
         self.name = name
         self.kids = kids
-        self.signatureDownloadURL = signatureDownloadURL
         self.signedInDate = Date(timeIntervalSince1970: signedInTimeInterval)
         
         switch adultOrChildString {

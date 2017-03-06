@@ -24,17 +24,31 @@ class PracticeMemberDetailTableViewController: UITableViewController {
             if !isViewLoaded {
                 loadView()
             }
-            updateViews()
+            updateViewsForPracticeMember()
         }
     }
     
-    func updateViews() {
+    var signatureImage: UIImage? {
+        didSet {
+            if !isViewLoaded {
+                loadView()
+            }
+            updateViewForSignatureImage()
+        }
+    }
+    
+    func updateViewsForPracticeMember() {
         guard let practiceMember = practiceMember else { return }
         nameLabel.text = practiceMember.name
         kidsNamesLabel.text = !practiceMember.kids.isEmpty ? practiceMember.kids : "No kids"
         adultOrChildLabel.text = practiceMember.adultOrChild.rawValue
         paymentTypeLabel.text = practiceMember.paymentType.rawValue
         timeCheckedInLabel.text = dateFormatter.string(from: practiceMember.signedInDate)
+    }
+    
+    func updateViewForSignatureImage() {
+        guard let signatureImage = signatureImage else { return }
+        signatureImageView.image = signatureImage
     }
     
     let dateFormatter: DateFormatter = {

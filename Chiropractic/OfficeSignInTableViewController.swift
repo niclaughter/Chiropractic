@@ -204,9 +204,8 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
             }
         }
         LoaderView.show(animated: true)
-        ImageController.saveSignatureImageToDatabase(signature) { (downloadURL, identifier) in
-            guard let downloadURL = downloadURL else { return }
-            PracticeMemberController.shared.signInPracticeMember(withName: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, signatureDownloadURL: downloadURL, andIdentifier: identifier) {
+        ImageController.shared.saveSignatureImageToDatabase(signature) { (_, identifier) in
+            PracticeMemberController.shared.signInPracticeMember(withName: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, andIdentifier: identifier) {
                 self.clearViews()
                 self.presentSignInSuccessfulAlertController()
                 LoaderView.hide()

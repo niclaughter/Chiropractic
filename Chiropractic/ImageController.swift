@@ -12,7 +12,11 @@ import FirebaseStorage
 
 class ImageController {
     
-    static func saveSignatureImageToDatabase(_ image: UIImage, completion: @escaping (URL?, String) -> Void = { _ in }) {
+    static let shared = ImageController()
+    
+    var imagesDict = [String: UIImage]()
+    
+    func saveSignatureImageToDatabase(_ image: UIImage, completion: @escaping (URL?, String) -> Void = { _ in }) {
         let identifier = FirebaseController.databaseRef.child(Constants.practiceMembersEndpoint).childByAutoId().key
         defer { completion(nil, identifier) }
         guard let imageData = UIImageJPEGRepresentation(image, 1.0) else { return }
@@ -26,6 +30,21 @@ class ImageController {
                 return
             }
             completion(metadata.downloadURL(), identifier)
+        }
+    }
+    
+    func fetchImage(forPracticeMember practiceMember: PracticeMember, completion: @escaping (UIImage?) -> Void = { _ in }) {
+        defer { completion(nil) }
+        guard let identifier = practiceMember.identifier else { return }
+        let signatureRef = FirebaseController.storageRef.child(Constants.imagesEndpoint).child(Constants.signaturesEndpoint).child(identifier)
+        signatureRef.data(withMaxSize: (1 * 480 * 480)) { (data, error) in
+            if let error = error {
+                NSLog("Error getting signature from server:\n\(error)")
+            }
+            guard let data = data,
+                let image = UIImage(data: data) else { return }
+            self.imagesDict.updateValue(image, forKey: identifier)
+            completion(image)
         }
     }
 }

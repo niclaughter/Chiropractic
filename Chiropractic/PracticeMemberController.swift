@@ -38,10 +38,9 @@ class PracticeMemberController {
                               kids: String,
                               adultOrChild: AdultOrChild,
                               paymentType: PaymentType,
-                              signatureDownloadURL: URL,
                               andIdentifier identifier: String,
                               completion: @escaping () -> Void = { _ in }) {
-        var practiceMember = PracticeMember(name: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, identifier: identifier, signatureDownloadURL: signatureDownloadURL)
+        var practiceMember = PracticeMember(name: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, identifier: identifier)
         practiceMember.save()
         completion()
     }
