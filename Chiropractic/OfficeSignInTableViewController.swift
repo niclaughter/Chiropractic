@@ -179,7 +179,8 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     func signInPracticeMember() {
         guard let name = nameTextField.text,
             let kids = kidsTextField.text,
-            let signature = signatureView.getCroppedSignature(scale: 0.25) else {
+            let signature = signatureView.getCroppedSignature(scale: 0.25),
+            !name.isEmpty else {
                 presentErrorSigningInAlertController()
                 return
         }

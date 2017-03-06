@@ -12,8 +12,8 @@ import Firebase
 class FirebaseController {
     
     static let shared = FirebaseController()
-    static let ref = FIRDatabase.database().reference()
-    
+    static let databaseRef = FIRDatabase.database().reference()
+    static let storageRef = FIRStorage.storage().reference()
 }
 
 protocol FirebaseType {
@@ -31,7 +31,7 @@ protocol FirebaseType {
 extension FirebaseType {
     
     mutating func save() {
-        var newEndpoint = FirebaseController.ref.child(endpoint)
+        var newEndpoint = FirebaseController.databaseRef.child(endpoint)
         if let identifier = identifier {
             newEndpoint = newEndpoint.child(identifier)
         } else {
@@ -43,6 +43,6 @@ extension FirebaseType {
     
     func delete() {
         guard let identifier = identifier else { return }
-        FirebaseController.ref.child(endpoint).child(identifier).removeValue()
+        FirebaseController.databaseRef.child(endpoint).child(identifier).removeValue()
     }
 }

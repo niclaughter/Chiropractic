@@ -16,7 +16,7 @@ struct Constants {
     static let kidsKey = "kids"
     static let adultOrChildKey = "adultOrChild"
     static let paymentTypeKey = "paymentType"
-    static let signatureDataKey = "signatureData"
+    static let signatureDataStringKey = "signatureDataString"
     static let signedInDateKey = "signedInDate"
     static let identifierKey = "identifier"
     
@@ -27,6 +27,8 @@ struct Constants {
     /* Firebase Keys */
     static let practiceMembersEndpoint = "practiceMembers"
     static let accountsEndpoint = "accounts"
+    static let imagesEndpoint = "images"
+    static let signaturesEndpoint = "signatures"
     
     /* URL Strings */
     static let myChiro4KidsURLString = "http://mychiro4kids.com"

@@ -21,6 +21,7 @@
 		66A625881E2ABAAE002F3416 /* PracticeMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A625871E2ABAAE002F3416 /* PracticeMember.swift */; };
 		66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A625891E2ABADC002F3416 /* Enums.swift */; };
 		66A6258C1E2ABBBD002F3416 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A6258B1E2ABBBD002F3416 /* String+Extension.swift */; };
+		66ABEA201E6CE23300B129EB /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ABEA1F1E6CE23300B129EB /* ImageController.swift */; };
 		66AFAFAB1E2D77790013B68F /* SignatureCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */; };
 		66AFAFAE1E2D83F20013B68F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFAD1E2D83F20013B68F /* Constants.swift */; };
 		66AFAFB01E2D84C50013B68F /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */; };
@@ -37,7 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		66052E081E68E463008EF49F /* OfficeSignInTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficeSignInTableViewController.swift; sourceTree = "<group>"; };
+		66052E081E68E463008EF49F /* OfficeSignInTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OfficeSignInTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		665014211E30205D006FC465 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Account.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		665014231E3024F4006FC465 /* PracticeMemberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PracticeMemberController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		665014251E30250C006FC465 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AccountController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -52,11 +53,12 @@
 		669946761E64C59E00BC9430 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		66A625871E2ABAAE002F3416 /* PracticeMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PracticeMember.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		66A625891E2ABADC002F3416 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		66A6258B1E2ABBBD002F3416 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureCaptureView.swift; sourceTree = "<group>"; };
+		66A6258B1E2ABBBD002F3416 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Extension.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		66ABEA1F1E6CE23300B129EB /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SignatureCaptureView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		66AFAFAD1E2D83F20013B68F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
-		66C10C9F1E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignUpTableViewController.swift; sourceTree = "<group>"; };
+		66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FirebaseController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		66C10C9F1E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginSignUpTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		66C10CA11E2EC25300BF4AFF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = WebViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		66C10CA31E2ECB0800BF4AFF /* PracticeMemberListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PracticeMemberListViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		66C10CA51E2ECD6A00BF4AFF /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				665014231E3024F4006FC465 /* PracticeMemberController.swift */,
 				665014251E30250C006FC465 /* AccountController.swift */,
+				66ABEA1F1E6CE23300B129EB /* ImageController.swift */,
 			);
 			name = ModelController;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				66DA6CD41E68E266003A6174 /* ImagesHelper.swift in Sources */,
 				665014241E3024F4006FC465 /* PracticeMemberController.swift in Sources */,
 				66C10CA41E2ECB0800BF4AFF /* PracticeMemberListViewController.swift in Sources */,
+				66ABEA201E6CE23300B129EB /* ImageController.swift in Sources */,
 				667F0ADB1E2AABB4002AFA4E /* AppDelegate.swift in Sources */,
 				66FD65231E68F65400216841 /* InitialViewController.swift in Sources */,
 				66AFAFAE1E2D83F20013B68F /* Constants.swift in Sources */,

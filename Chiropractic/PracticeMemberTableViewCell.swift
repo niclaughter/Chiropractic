@@ -28,6 +28,5 @@ class PracticeMemberTableViewCell: UITableViewCell {
         guard let practiceMember = practiceMember else { return }
         practiceMemberNameLabel.text = practiceMember.name
         practiceMemberDetailLabel.text = !practiceMember.kids.isEmpty ? practiceMember.kids : practiceMember.adultOrChild.rawValue
-        practiceMemberSignatureImageView.image = practiceMember.signatureImage
     }
 }

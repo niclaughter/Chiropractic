@@ -16,7 +16,6 @@ struct PracticeMember: FirebaseType {
     let adultOrChild: AdultOrChild
     let paymentType: PaymentType
     var identifier: String?
-    let signatureImage: UIImage
     let signedInDate: Date
     var endpoint: String = Constants.practiceMembersEndpoint
     
@@ -26,21 +25,14 @@ struct PracticeMember: FirebaseType {
             Constants.kidsKey: kids,
             Constants.adultOrChildKey: adultOrChild.rawValue,
             Constants.paymentTypeKey: paymentType.rawValue,
-            Constants.signatureDataKey: signatureDataFromImageString,
             Constants.signedInDateKey: signedInDate.timeIntervalSince1970
         ]
-    }
-    
-    var signatureDataFromImageString: String {
-        let data = UIImageJPEGRepresentation(signatureImage, 0.8) ?? Data()
-        return data.base64EncodedString()
     }
     
     init(name: String,
          kids: String,
          adultOrChild: AdultOrChild,
          paymentType: PaymentType,
-         signatureImage: UIImage,
          identifier: String,
          accountType: AccountType = .user,
          signedInDate: Date = Date()) {
@@ -49,7 +41,6 @@ struct PracticeMember: FirebaseType {
         self.kids = kids
         self.adultOrChild = adultOrChild
         self.paymentType = paymentType
-        self.signatureImage = signatureImage
         self.identifier = identifier
         self.signedInDate = signedInDate
     }
@@ -59,15 +50,11 @@ struct PracticeMember: FirebaseType {
             let kids = dictionary[Constants.kidsKey] as? String,
             let adultOrChildString = dictionary[Constants.adultOrChildKey] as? String,
             let paymentTypeString = dictionary[Constants.paymentTypeKey] as? String,
-            let signatureDataString = dictionary[Constants.signatureDataKey] as? String,
-            let signatureData = signatureDataString.data(using: .utf8),
-            let signatureImage = UIImage(data: signatureData),
             let signedInTimeInterval = dictionary[Constants.signedInDateKey] as? TimeInterval
             else { return nil }
         self.identifier = identifier
         self.name = name
         self.kids = kids
-        self.signatureImage = signatureImage
         self.signedInDate = Date(timeIntervalSince1970: signedInTimeInterval)
         
         switch adultOrChildString {

@@ -48,14 +48,15 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
         }
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Constants.toPracticeMemberDetailSegueKey {
+            guard let destinationViewController = segue.destination as? PracticeMemberDetailTableViewController,
+                let indexPath = practiceMemberListTableView.indexPathForSelectedRow else { return }
+            let practiceMember = PracticeMemberController.shared.practiceMembers[indexPath.row]
+            destinationViewController.practiceMember = practiceMember
+        }
     }
-    */
 
 }
