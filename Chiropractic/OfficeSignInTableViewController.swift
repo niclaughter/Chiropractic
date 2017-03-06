@@ -166,6 +166,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         kidsTextField.text = nil
         adultOrChildSelector.selectedSegmentIndex = 0
         paymentTypeTextField.text = nil
+        paymentTypePickerView.selectRow(0, inComponent: 0, animated: false)
         signatureView.clear()
     }
     
@@ -179,8 +180,9 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     func signInPracticeMember() {
         guard let name = nameTextField.text,
             let kids = kidsTextField.text,
+            let paymentTypeText = paymentTypeTextField.text,
             let signature = signatureView.getCroppedSignature(scale: 0.25),
-            !name.isEmpty else {
+            !name.isEmpty, !paymentTypeText.isEmpty else {
                 presentErrorSigningInAlertController()
                 return
         }
