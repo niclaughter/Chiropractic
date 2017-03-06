@@ -565,14 +565,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="female-youth-running" translatesAutoresizingMaskIntoConstraints="NO" id="l4Y-SK-xVX">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spine-drawing" translatesAutoresizingMaskIntoConstraints="NO" id="l4Y-SK-xVX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="l4Y-SK-xVX" firstAttribute="leading" secondItem="oXh-s3-uWE" secondAttribute="leading" id="8lP-Jt-Khg"/>
-                            <constraint firstItem="l4Y-SK-xVX" firstAttribute="top" secondItem="ePa-1G-Cn5" secondAttribute="bottom" id="Zes-9W-bl5"/>
+                            <constraint firstItem="l4Y-SK-xVX" firstAttribute="top" secondItem="ePa-1G-Cn5" secondAttribute="bottom" constant="-64" id="Zes-9W-bl5"/>
                             <constraint firstItem="xjg-FH-kZU" firstAttribute="top" secondItem="l4Y-SK-xVX" secondAttribute="bottom" id="emg-Ts-EEp"/>
                             <constraint firstAttribute="trailing" secondItem="l4Y-SK-xVX" secondAttribute="trailing" id="hI3-Zw-INY"/>
                         </constraints>
@@ -621,6 +621,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="female-youth-running" width="16" height="16"/>
+        <image name="spine-drawing" width="16" height="16"/>
     </resources>
 </document>

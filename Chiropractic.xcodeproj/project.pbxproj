@@ -182,6 +182,7 @@
 			children = (
 				66C10CA51E2ECD6A00BF4AFF /* iPad.storyboard */,
 				66052E081E68E463008EF49F /* OfficeSignInTableViewController.swift */,
+				66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */,
 			);
 			name = "Office iPad";
 			sourceTree = "<group>";
@@ -196,7 +197,6 @@
 				66C10CA71E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift */,
 				66DA6CD11E68BABC003A6174 /* PracticeMemberDetailTableViewController.swift */,
 				66C10CA11E2EC25300BF4AFF /* WebViewController.swift */,
-				66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";

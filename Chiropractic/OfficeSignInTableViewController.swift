@@ -203,7 +203,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
                 return .cash
             }
         }
-        LoaderView.show(animated: true)
+        LoaderView.show(title: "Signing in", animated: true)
         ImageController.shared.saveSignatureImageToDatabase(signature) { (identifier) in
             PracticeMemberController.shared.signInPracticeMember(withName: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, andIdentifier: identifier) {
                 self.clearViews()
