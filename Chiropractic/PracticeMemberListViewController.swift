@@ -25,6 +25,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
         super.viewDidLoad()
 
         PracticeMemberController.shared.delegate = self
+        practiceMemberListTableView.tableFooterView = UIView()
     }
     
     // MARK: - Table view data source and delegate
@@ -42,10 +43,6 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
     }
     
     // MARK: - UI Actions
@@ -66,7 +63,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     }
     
     @IBAction func printListButtonTapped(_ sender: Any) {
-        
+        presentComingSoonAlertController()
     }
     
     // MARK: - Practice Members Controller Delegate
@@ -86,7 +83,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
         if segue.identifier == Constants.toPracticeMemberDetailSegueKey {
             guard let destinationViewController = segue.destination as? PracticeMemberDetailTableViewController,
                 let indexPath = practiceMemberListTableView.indexPathForSelectedRow else { return }
-            let practiceMember = PracticeMemberController.shared.practiceMembers[indexPath.row]
+            let practiceMember = practiceMembersToDisplay[indexPath.row]
             destinationViewController.practiceMember = practiceMember
             guard let identifier = practiceMember.identifier,
                 let signatureImage = ImageController.shared.imagesDict[identifier] else { return }
@@ -112,6 +109,9 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     }
     
     func presentComingSoonAlertController() {
-        
+        let alertController = UIAlertController(title: "Soming Soon!", message: "This feature isn't ready yet, but will be available soon", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true, completion: nil)
     }
 }

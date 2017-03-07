@@ -33,6 +33,7 @@
 		66C10CA81E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C10CA71E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift */; };
 		66DA6CD21E68BABC003A6174 /* PracticeMemberDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DA6CD11E68BABC003A6174 /* PracticeMemberDetailTableViewController.swift */; };
 		66DA6CD41E68E266003A6174 /* ImagesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DA6CD31E68E266003A6174 /* ImagesHelper.swift */; };
+		66E810D91E6F059100F7C9CC /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E810D81E6F059100F7C9CC /* ColorHelper.swift */; };
 		66FD65231E68F65400216841 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FD65221E68F65400216841 /* InitialViewController.swift */; };
 		66FF15E31E66134B00AC963F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66FF15E21E66134B00AC963F /* Images.xcassets */; };
 		9B81D702FB24B2529E8F3C60 /* Pods_Chiropractic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */; };
@@ -67,6 +68,7 @@
 		66C10CA71E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeMemberTableViewCell.swift; sourceTree = "<group>"; };
 		66DA6CD11E68BABC003A6174 /* PracticeMemberDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeMemberDetailTableViewController.swift; sourceTree = "<group>"; };
 		66DA6CD31E68E266003A6174 /* ImagesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesHelper.swift; sourceTree = "<group>"; };
+		66E810D81E6F059100F7C9CC /* ColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		66FD65221E68F65400216841 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		66FF15E21E66134B00AC963F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiropractic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */,
 				66027D811E6E15BA00BB4D65 /* DocumentManager.swift */,
 				669946761E64C59E00BC9430 /* LoaderView.swift */,
+				66E810D81E6F059100F7C9CC /* ColorHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				66DA6CD21E68BABC003A6174 /* PracticeMemberDetailTableViewController.swift in Sources */,
 				66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */,
 				6655CB5A1E38267A00C4FC9F /* ViewTransitionManager.swift in Sources */,
+				66E810D91E6F059100F7C9CC /* ColorHelper.swift in Sources */,
 				669946771E64C59E00BC9430 /* LoaderView.swift in Sources */,
 				66052E091E68E463008EF49F /* OfficeSignInTableViewController.swift in Sources */,
 				665014261E30250C006FC465 /* AccountController.swift in Sources */,

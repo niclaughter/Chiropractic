@@ -27,6 +27,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         super.viewDidLoad()
         
         setUpViews()
+        tableView.tableFooterView = UIView()
     }
     
     // MARK: - User Actions
@@ -144,9 +145,9 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true
-        toolBar.tintColor = .blue
+        toolBar.tintColor = ColorHelper.softBlue
         toolBar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePicker))
+        let doneButton = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(donePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolBar.setItems([spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
@@ -186,6 +187,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
                 presentErrorSigningInAlertController()
                 return
         }
+        LoaderView.show(title: "Signing in", animated: true)
         let adultOrChild: AdultOrChild = adultOrChildSelector.selectedSegmentIndex == 0 ? .adult : .child
         var paymentType: PaymentType {
             switch paymentTypePickerView.selectedRow(inComponent: 0) {
@@ -203,14 +205,12 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
                 return .cash
             }
         }
-        LoaderView.show(title: "Signing in", animated: true)
         ImageController.shared.saveSignatureImageToDatabase(signature) { (identifier) in
-            PracticeMemberController.shared.signInPracticeMember(withName: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, andIdentifier: identifier) {
-                self.clearViews()
-                self.presentSignInSuccessfulAlertController()
-                LoaderView.hide()
-            }
+            PracticeMemberController.shared.signInPracticeMember(withName: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, andIdentifier: identifier)
         }
+        self.clearViews()
+        self.presentSignInSuccessfulAlertController()
+        LoaderView.hide()
     }
     
     func presentSignInSuccessfulAlertController() {
