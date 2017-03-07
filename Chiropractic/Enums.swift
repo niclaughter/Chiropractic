@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum AdultOrChild: String {
     case adult = "18+"
@@ -28,4 +29,11 @@ enum AccountType: String {
     case office = "office"
     case user = "user"
     case initial = "initial"
+}
+
+enum Timeframe {
+    case today
+    case yesterday
+    case week
+    case month
 }

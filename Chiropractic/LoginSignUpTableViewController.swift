@@ -30,16 +30,7 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let blankView = UIView()
-        tableView.tableFooterView = blankView
-        
-        if let currentUser = FIRAuth.auth()?.currentUser {
-            setUpLoader(withTitle: "Fetching Profile")
-            AccountController.shared.fetchAccount(withIdentifier: currentUser.uid, completion: { (accountType) in
-                ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
-                LoaderView.hide()
-            })
-        }
+        tableView.tableFooterView = UIView()
     }
     
     // MARK: - TextFieldDelegate
@@ -103,9 +94,11 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
                 displayAlertController()
                 return
         }
+        LoaderView.show(title: "Registering", animated: true)
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             self.handle(error: error)
             self.handle(user: user)
+            LoaderView.hide()
         })
     }
     
@@ -115,9 +108,11 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
                 displayAlertController()
                 return
         }
+        LoaderView.show(title: "Logging In", animated: true)
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             self.handle(error: error)
             self.handle(user: user)
+            LoaderView.hide()
         })
     }
     
@@ -148,18 +143,5 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
         alertController.addAction(dismissAction)
         present(alertController, animated: true, completion: nil)
-    }
-    
-    // MARK: - Loader
-    
-    func setUpLoader(withTitle title: String) {
-        var config = LoaderView.Config()
-        config.size = 150
-        config.spinnerColor = .cyan
-        config.spinnerLineWidth = 3
-        config.foregroundColor = .black
-        config.foregroundAlpha = 0.5
-        LoaderView.setConfig(config: config)
-        LoaderView.show(title: title, animated: true)
     }
 }

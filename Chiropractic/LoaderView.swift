@@ -75,7 +75,7 @@ class LoaderView: UIView {
     
     public class func show(title: String?, animated : Bool) {
         
-        let currentWindow : UIWindow = UIApplication.shared.keyWindow!
+        guard let currentWindow : UIWindow = UIApplication.shared.keyWindow else { return }
         
         let loader = LoaderView.sharedInstance
         loader.canUpdated = true

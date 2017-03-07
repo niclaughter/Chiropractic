@@ -10,8 +10,52 @@ import UIKit
 
 class PracticeMemberDetailTableViewController: UITableViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    // MARK: - Properties
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var kidsNamesLabel: UILabel!
+    @IBOutlet weak var adultOrChildLabel: UILabel!
+    @IBOutlet weak var paymentTypeLabel: UILabel!
+    @IBOutlet weak var timeCheckedInLabel: UILabel!
+    @IBOutlet weak var signatureImageView: UIImageView!
+    
+    var practiceMember: PracticeMember? {
+        didSet {
+            if !isViewLoaded {
+                loadView()
+            }
+            updateViewsForPracticeMember()
+        }
     }
+    
+    var signatureImage: UIImage? {
+        didSet {
+            if !isViewLoaded {
+                loadView()
+            }
+            updateViewForSignatureImage()
+        }
+    }
+    
+    func updateViewsForPracticeMember() {
+        guard let practiceMember = practiceMember else { return }
+        nameLabel.text = practiceMember.name
+        kidsNamesLabel.text = !practiceMember.kids.isEmpty ? practiceMember.kids : "No kids"
+        adultOrChildLabel.text = practiceMember.adultOrChild.rawValue
+        paymentTypeLabel.text = practiceMember.paymentType.rawValue
+        timeCheckedInLabel.text = dateFormatter.string(from: practiceMember.signedInDate)
+    }
+    
+    func updateViewForSignatureImage() {
+        guard let signatureImage = signatureImage else { return }
+        signatureImageView.image = signatureImage
+    }
+    
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        formatter.doesRelativeDateFormatting = true
+        return formatter
+    }()
 }
