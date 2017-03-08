@@ -27,7 +27,6 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         super.viewDidLoad()
         
         setUpViews()
-        tableView.tableFooterView = UIView()
     }
     
     // MARK: - User Actions
@@ -139,6 +138,8 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     // MARK: - Helper Methods
     
     func setUpViews() {
+        tableView.tableFooterView = UIView()
+        
         signatureView.delegate = self
         tableView.isScrollEnabled = false
         

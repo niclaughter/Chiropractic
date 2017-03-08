@@ -22,8 +22,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="264"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oe9-2v-GSZ">
-                                    <rect key="frame" x="0.0" y="20" width="375" height="206"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spine-drawing" translatesAutoresizingMaskIntoConstraints="NO" id="Oe9-2v-GSZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="226"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbZ-z5-gnJ">
                                     <rect key="frame" x="0.0" y="234" width="375" height="30"/>
@@ -35,12 +35,22 @@
                                         <action selector="LogInSignUpStateButtonTapped:" destination="GRe-z7-sPy" eventType="touchUpInside" id="0nE-JC-4Kg"/>
                                     </connections>
                                 </button>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiro-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="h9F-iN-FmP">
+                                    <rect key="frame" x="95" y="148" width="184" height="78"/>
+                                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="184" id="3Mq-st-0hQ"/>
+                                        <constraint firstAttribute="height" constant="78" id="wfH-lW-GTP"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="IbZ-z5-gnJ" secondAttribute="trailing" id="3Ht-yS-Bqj"/>
+                                <constraint firstItem="IbZ-z5-gnJ" firstAttribute="top" secondItem="h9F-iN-FmP" secondAttribute="bottom" constant="8" id="3e4-Ex-SIV"/>
                                 <constraint firstItem="IbZ-z5-gnJ" firstAttribute="top" secondItem="Oe9-2v-GSZ" secondAttribute="bottom" constant="8" id="GmA-Qh-ytl"/>
-                                <constraint firstItem="Oe9-2v-GSZ" firstAttribute="top" secondItem="vYb-Qa-swj" secondAttribute="top" constant="20" id="L0F-lb-1SC"/>
+                                <constraint firstItem="h9F-iN-FmP" firstAttribute="centerX" secondItem="vYb-Qa-swj" secondAttribute="centerX" id="Jjj-zm-vmc"/>
+                                <constraint firstItem="Oe9-2v-GSZ" firstAttribute="top" secondItem="vYb-Qa-swj" secondAttribute="top" id="L0F-lb-1SC"/>
                                 <constraint firstAttribute="bottom" secondItem="IbZ-z5-gnJ" secondAttribute="bottom" id="Nxd-3C-qYd"/>
                                 <constraint firstItem="Oe9-2v-GSZ" firstAttribute="leading" secondItem="vYb-Qa-swj" secondAttribute="leading" id="ViY-14-O32"/>
                                 <constraint firstItem="IbZ-z5-gnJ" firstAttribute="leading" secondItem="vYb-Qa-swj" secondAttribute="leading" id="uht-Sb-ITs"/>
@@ -621,6 +631,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chiro-Icon" width="184" height="78"/>
         <image name="spine-drawing" width="16" height="16"/>
     </resources>
 </document>
