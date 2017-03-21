@@ -13,6 +13,7 @@
 		665014241E3024F4006FC465 /* PracticeMemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665014231E3024F4006FC465 /* PracticeMemberController.swift */; };
 		665014261E30250C006FC465 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665014251E30250C006FC465 /* AccountController.swift */; };
 		6655CB5A1E38267A00C4FC9F /* ViewTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */; };
+		665EADDD1E7990CD00C64197 /* GoogleAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665EADDC1E7990CD00C64197 /* GoogleAPIManager.swift */; };
 		667F0ADB1E2AABB4002AFA4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F0ADA1E2AABB4002AFA4E /* AppDelegate.swift */; };
 		667F0AE01E2AABB4002AFA4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667F0ADE1E2AABB4002AFA4E /* Main.storyboard */; };
 		667F0AE21E2AABB4002AFA4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667F0AE11E2AABB4002AFA4E /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		665014231E3024F4006FC465 /* PracticeMemberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PracticeMemberController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		665014251E30250C006FC465 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AccountController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewTransitionManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		665EADDC1E7990CD00C64197 /* GoogleAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAPIManager.swift; sourceTree = "<group>"; };
 		667F0AD71E2AABB4002AFA4E /* Chiropractic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chiropractic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		667F0ADA1E2AABB4002AFA4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		667F0ADF1E2AABB4002AFA4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				66027D811E6E15BA00BB4D65 /* DocumentManager.swift */,
 				669946761E64C59E00BC9430 /* LoaderView.swift */,
 				66E810D81E6F059100F7C9CC /* ColorHelper.swift */,
+				665EADDC1E7990CD00C64197 /* GoogleAPIManager.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				66ABEA201E6CE23300B129EB /* ImageController.swift in Sources */,
 				667F0ADB1E2AABB4002AFA4E /* AppDelegate.swift in Sources */,
 				66FD65231E68F65400216841 /* InitialViewController.swift in Sources */,
+				665EADDD1E7990CD00C64197 /* GoogleAPIManager.swift in Sources */,
 				66AFAFAE1E2D83F20013B68F /* Constants.swift in Sources */,
 				66C10CA01E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift in Sources */,
 				66AFAFAB1E2D77790013B68F /* SignatureCaptureView.swift in Sources */,

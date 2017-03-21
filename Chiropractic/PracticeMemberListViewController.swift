@@ -63,7 +63,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     }
     
     @IBAction func printListButtonTapped(_ sender: Any) {
-        presentComingSoonAlertController()
+        
     }
     
     // MARK: - Practice Members Controller Delegate
@@ -96,22 +96,17 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     func getPracticeMembers(forTimeframe timeframe: Timeframe) {
         let today = Date()
         let calendar = Calendar.current
+        var unsortedPracticeMembers = [PracticeMember]()
         switch timeframe {
         case .today:
-            practiceMembersToDisplay = PracticeMemberController.shared.practiceMembers.filter { calendar.isDateInToday($0.signedInDate) }
+            unsortedPracticeMembers = PracticeMemberController.shared.practiceMembers.filter { calendar.isDateInToday($0.signedInDate) }
         case .yesterday:
-            practiceMembersToDisplay = PracticeMemberController.shared.practiceMembers.filter { calendar.isDateInYesterday($0.signedInDate) }
+            unsortedPracticeMembers = PracticeMemberController.shared.practiceMembers.filter { calendar.isDateInYesterday($0.signedInDate) }
         case .week:
-            practiceMembersToDisplay = PracticeMemberController.shared.practiceMembers.filter { calendar.isDate($0.signedInDate, equalTo: today, toGranularity: .weekOfMonth) }
+            unsortedPracticeMembers = PracticeMemberController.shared.practiceMembers.filter { calendar.isDate($0.signedInDate, equalTo: today, toGranularity: .weekOfMonth) }
         case .month:
-            practiceMembersToDisplay = PracticeMemberController.shared.practiceMembers.filter { calendar.isDate($0.signedInDate, equalTo: today, toGranularity: .month) }
+            unsortedPracticeMembers = PracticeMemberController.shared.practiceMembers.filter { calendar.isDate($0.signedInDate, equalTo: today, toGranularity: .month) }
         }
-    }
-    
-    func presentComingSoonAlertController() {
-        let alertController = UIAlertController(title: "Soming Soon!", message: "This feature isn't ready yet, but will be available soon", preferredStyle: .alert)
-        let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
-        alertController.addAction(dismissAction)
-        present(alertController, animated: true, completion: nil)
+        practiceMembersToDisplay = unsortedPracticeMembers.sorted(by: { $0.0.signedInDate < $0.1.signedInDate })
     }
 }
