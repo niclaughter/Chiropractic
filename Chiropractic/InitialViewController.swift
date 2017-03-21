@@ -15,23 +15,27 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
         
         setUpAppUsage()
-        navigationController?.navigationBar.isHidden = true
     }
     
     func setUpAppUsage() {
-        checkUserAgainstDatabase { (success, _) in
-            if success,
-                let currentUser = FIRAuth.auth()?.currentUser {
-                self.setUpLoader(withTitle: "Fetching Profile")
-                AccountController.shared.fetchAccount(withIdentifier: currentUser.uid, completion: { (accountType) in
-                    ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
-                    LoaderView.hide()
-                })
-            } else {
-                ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: .initial)
-            }
-        }
+        navigationController?.navigationBar.isHidden = true
         
+        if FIRAuth.auth()?.currentUser != nil {
+            checkUserAgainstDatabase { (success, _) in
+                if success,
+                    let currentUser = FIRAuth.auth()?.currentUser {
+                    self.setUpLoader(withTitle: "Fetching Profile")
+                    AccountController.shared.fetchAccount(withIdentifier: currentUser.uid, completion: { (accountType) in
+                        ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
+                        LoaderView.hide()
+                    })
+                } else {
+                    ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: .initial)
+                }
+            }
+        } else {
+            ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: .initial)
+        }
     }
     
     func checkUserAgainstDatabase(_ completion: @escaping (_ success: Bool, _ error: NSError?) -> Void) {

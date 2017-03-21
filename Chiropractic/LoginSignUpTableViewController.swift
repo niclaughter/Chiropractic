@@ -31,6 +31,7 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        headerImageView.layer.masksToBounds = true
     }
     
     // MARK: - TextFieldDelegate
@@ -128,12 +129,13 @@ class LoginSignUpTableViewController: UITableViewController, UITextFieldDelegate
         var accountType: AccountType = .user
         if signUpState {
             AccountController.shared.createAccount(withEmail: email, andIdentifier: user.uid)
+            ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
         } else {
             AccountController.shared.fetchAccount(withIdentifier: user.uid, completion: { (returnedAccountType) in
                 accountType = returnedAccountType
+                ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
             })
         }
-        ViewTransitionManager.transitionToCorrectViewController(fromViewController: self, forAccountType: accountType)
     }
     
     // MARK: - UIAlertController
