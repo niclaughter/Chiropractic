@@ -146,7 +146,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true
-        toolBar.tintColor = ColorHelper.softBlue
+        toolBar.tintColor = .softBlue
         toolBar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(donePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
