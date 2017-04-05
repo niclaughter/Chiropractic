@@ -17,10 +17,10 @@ class ImageController {
     var imagesDict = [String: UIImage]()
     
     func saveSignatureImageToDatabase(_ image: UIImage, completion: @escaping (String) -> Void = { _ in }) {
-        let identifier = FirebaseController.databaseRef.child(Constants.practiceMembersEndpoint).childByAutoId().key
+        let identifier = FirebaseController.databaseRef.child(.practiceMembersEndpoint).childByAutoId().key
         defer { completion(identifier) }
         guard let imageData = UIImageJPEGRepresentation(image, 1.0) else { return }
-        let signatureRef = FirebaseController.storageRef.child(Constants.imagesEndpoint).child(Constants.signaturesEndpoint).child(identifier)
+        let signatureRef = FirebaseController.storageRef.child(.imagesEndpoint).child(.signaturesEndpoint).child(identifier)
         signatureRef.put(imageData, metadata: nil) { (_, error) in
             if let error = error {
                 NSLog("Error saving signature image:\n\(error)")
@@ -32,7 +32,7 @@ class ImageController {
     func fetchImage(forPracticeMember practiceMember: PracticeMember, completion: @escaping (UIImage?) -> Void = { _ in }) {
         defer { completion(nil) }
         guard let identifier = practiceMember.identifier else { return }
-        let signatureRef = FirebaseController.storageRef.child(Constants.imagesEndpoint).child(Constants.signaturesEndpoint).child(identifier)
+        let signatureRef = FirebaseController.storageRef.child(.imagesEndpoint).child(.signaturesEndpoint).child(identifier)
         signatureRef.data(withMaxSize: (1 * 480 * 480)) { (data, error) in
             if let error = error {
                 NSLog("Error getting signature from server:\n\(error)")

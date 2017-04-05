@@ -25,7 +25,7 @@ class AccountController {
             completion(.initial)
             return
         }
-        let accountRef = FirebaseController.databaseRef.child(Constants.accountsEndpoint).child(identifier)
+        let accountRef = FirebaseController.databaseRef.child(.accountsEndpoint).child(identifier)
         accountRef.observeSingleEvent(of: .value, with: { (data) in
             guard let accountDict = data.value as? [String: Any] else {
                 completion(.initial)

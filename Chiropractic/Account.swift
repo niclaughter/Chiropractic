@@ -14,12 +14,12 @@ struct Account: FirebaseType {
     let accountType: AccountType
     var identifier: String?
     
-    var endpoint: String = Constants.accountsEndpoint
+    var endpoint: String = .accountsEndpoint
     
     var dictionaryCopy: [String : Any] {
         return [
-            Constants.emailKey: email,
-            Constants.accountTypeKey: accountType.rawValue
+            .emailKey: email,
+            .accountTypeKey: accountType.rawValue
         ]
     }
     
@@ -30,8 +30,8 @@ struct Account: FirebaseType {
     }
     
     init?(dictionary: [String : Any], identifier: String) {
-        guard let email = dictionary[Constants.emailKey] as? String,
-            let accountTypeString = dictionary[Constants.accountTypeKey] as? String else { return nil }
+        guard let email = dictionary[.emailKey] as? String,
+            let accountTypeString = dictionary[.accountTypeKey] as? String else { return nil }
         self.identifier = identifier
         self.email = email
         switch accountTypeString {

@@ -35,7 +35,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.practiceMemberCellKey) as? PracticeMemberTableViewCell ?? PracticeMemberTableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: .practiceMemberCellKey) as? PracticeMemberTableViewCell ?? PracticeMemberTableViewCell()
         let practiceMember = practiceMembersToDisplay[indexPath.row]
         cell.practiceMember = practiceMember
         return cell
@@ -80,7 +80,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.toPracticeMemberDetailSegueKey {
+        if segue.identifier == .toPracticeMemberDetailSegueKey {
             guard let destinationViewController = segue.destination as? PracticeMemberDetailTableViewController,
                 let indexPath = practiceMemberListTableView.indexPathForSelectedRow else { return }
             let practiceMember = practiceMembersToDisplay[indexPath.row]

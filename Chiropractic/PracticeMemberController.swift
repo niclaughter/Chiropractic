@@ -41,7 +41,7 @@ class PracticeMemberController {
     
     func observePracticeMembers(completion: @escaping () -> Void = { _ in }) {
         defer { completion() }
-        let practiceMembersRef = FirebaseController.databaseRef.child(Constants.practiceMembersEndpoint)
+        let practiceMembersRef = FirebaseController.databaseRef.child(.practiceMembersEndpoint)
         practiceMembersRef.observe(.value, with: { (snapshot) in
             guard let practiceMembersDict = snapshot.value as? [String: JSONDictionary] else { return }
             self.practiceMembers = practiceMembersDict.flatMap { PracticeMember(dictionary: $1, identifier: $0) }

@@ -17,15 +17,15 @@ struct PracticeMember: FirebaseType {
     let paymentType: PaymentType
     var identifier: String?
     let signedInDate: Date
-    var endpoint: String = Constants.practiceMembersEndpoint
+    var endpoint: String = .practiceMembersEndpoint
     
     var dictionaryCopy: JSONDictionary {
         return [
-            Constants.nameKey: name,
-            Constants.kidsKey: kids,
-            Constants.adultOrChildKey: adultOrChild.rawValue,
-            Constants.paymentTypeKey: paymentType.rawValue,
-            Constants.signedInDateKey: signedInDate.timeIntervalSince1970
+            .nameKey: name,
+            .kidsKey: kids,
+            .adultOrChildKey: adultOrChild.rawValue,
+            .paymentTypeKey: paymentType.rawValue,
+            .signedInDateKey: signedInDate.timeIntervalSince1970
         ]
     }
     
@@ -45,11 +45,11 @@ struct PracticeMember: FirebaseType {
     }
     
     init?(dictionary: JSONDictionary, identifier: String) {
-        guard let name = dictionary[Constants.nameKey] as? String,
-            let kids = dictionary[Constants.kidsKey] as? String,
-            let adultOrChildString = dictionary[Constants.adultOrChildKey] as? String,
-            let paymentTypeString = dictionary[Constants.paymentTypeKey] as? String,
-            let signedInTimeInterval = dictionary[Constants.signedInDateKey] as? TimeInterval
+        guard let name = dictionary[.nameKey] as? String,
+            let kids = dictionary[.kidsKey] as? String,
+            let adultOrChildString = dictionary[.adultOrChildKey] as? String,
+            let paymentTypeString = dictionary[.paymentTypeKey] as? String,
+            let signedInTimeInterval = dictionary[.signedInDateKey] as? TimeInterval
             else { return nil }
         self.identifier = identifier
         self.name = name
