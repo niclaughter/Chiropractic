@@ -25,7 +25,7 @@ class ImageController {
             if let error = error {
                 NSLog("Error saving signature image:\n\(error)")
             }
-            completion(identifier)
+//            completion(identifier)
         }
     }
     

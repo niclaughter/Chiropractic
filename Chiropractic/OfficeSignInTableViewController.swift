@@ -207,10 +207,10 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         }
         ImageController.shared.saveSignatureImageToDatabase(signature) { (identifier) in
             PracticeMemberController.shared.signInPracticeMember(withName: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, andIdentifier: identifier)
+            self.clearViews()
+            self.presentSignInSuccessfulAlertController()
+            LoaderView.hide()
         }
-        self.clearViews()
-        self.presentSignInSuccessfulAlertController()
-        LoaderView.hide()
     }
     
     func presentSignInSuccessfulAlertController() {

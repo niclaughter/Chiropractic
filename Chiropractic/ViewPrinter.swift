@@ -15,7 +15,10 @@ struct ViewPrinter {
     fileprivate let contentWidth = 468
     fileprivate let contentHeight = 648
     fileprivate let maxPracticeMembersPerPage = 27
-    fileprivate let subViewWidth = 93
+    fileprivate let defaultSubViewWidth = 93
+    fileprivate let kidsLabelWidth = 133
+    fileprivate let ageLabelWidth = 53
+    fileprivate let labelOffset = 40
     fileprivate let subViewHeight = 24
     fileprivate let marginWidth = 72
     
@@ -77,38 +80,38 @@ struct ViewPrinter {
             let paymentLabel = getLabel()
             let signatureImageView = UIImageView()
             
-            nameLabel.frame = CGRect(x: self.marginWidth,
-                                     y: self.marginWidth + self.subViewHeight * index,
-                                     width: self.subViewWidth,
-                                     height: self.subViewHeight)
+            nameLabel.frame = CGRect(x: marginWidth,
+                                     y: marginWidth + subViewHeight * index,
+                                     width: defaultSubViewWidth,
+                                     height: subViewHeight)
             nameLabel.text = practiceMember.name
             printerView.addSubview(nameLabel)
             
-            kidsLabel.frame = CGRect(x: self.marginWidth + self.subViewWidth,
-                                     y: self.marginWidth + self.subViewHeight * index,
-                                     width: self.subViewWidth,
-                                     height: self.subViewHeight)
-            kidsLabel.text = practiceMember.kids
+            kidsLabel.frame = CGRect(x: marginWidth + defaultSubViewWidth,
+                                     y: marginWidth + subViewHeight * index,
+                                     width: kidsLabelWidth,
+                                     height: subViewHeight)
+            kidsLabel.text = !practiceMember.kids.isEmpty ? practiceMember.kids : "No kids"
             printerView.addSubview(kidsLabel)
             
-            ageLabel.frame = CGRect(x: self.marginWidth + (self.subViewWidth * 2),
-                                    y: self.marginWidth + self.subViewHeight * index,
-                                    width: self.subViewWidth,
-                                    height: self.subViewHeight)
+            ageLabel.frame = CGRect(x: marginWidth + defaultSubViewWidth * 2 + labelOffset,
+                                    y: marginWidth + subViewHeight * index,
+                                    width: ageLabelWidth,
+                                    height: subViewHeight)
             ageLabel.text = practiceMember.adultOrChild.rawValue
             printerView.addSubview(ageLabel)
             
-            paymentLabel.frame = CGRect(x: self.marginWidth + (self.subViewWidth * 3),
-                                        y: self.marginWidth + self.subViewHeight * index,
-                                        width: self.subViewWidth,
-                                        height: self.subViewHeight)
+            paymentLabel.frame = CGRect(x: marginWidth + defaultSubViewWidth * 3,
+                                        y: marginWidth + subViewHeight * index,
+                                        width: defaultSubViewWidth,
+                                        height: subViewHeight)
             paymentLabel.text = practiceMember.paymentType.rawValue
             printerView.addSubview(paymentLabel)
             
-            signatureImageView.frame = CGRect(x: self.marginWidth + (self.subViewWidth * 4),
-                                              y: self.marginWidth + self.subViewHeight * index,
-                                              width: self.subViewWidth,
-                                              height: self.subViewHeight)
+            signatureImageView.frame = CGRect(x: marginWidth + defaultSubViewWidth * 4,
+                                              y: marginWidth + subViewHeight * index,
+                                              width: defaultSubViewWidth,
+                                              height: subViewHeight)
             signatureImageView.contentMode = .scaleAspectFit
             signatureImageView.image = signatureImage
             signatureImageView.layer.borderWidth = 1
@@ -127,35 +130,35 @@ struct ViewPrinter {
         
         nameLabel.frame = CGRect(x: marginWidth,
                                  y: marginWidth - subViewHeight,
-                                 width: subViewWidth,
+                                 width: defaultSubViewWidth,
                                  height: subViewHeight)
         nameLabel.text = .nameDisplayKey
         view.addSubview(nameLabel)
         
-        kidsLabel.frame = CGRect(x: marginWidth + subViewWidth,
+        kidsLabel.frame = CGRect(x: marginWidth + defaultSubViewWidth,
                                  y: marginWidth - subViewHeight,
-                                 width: subViewWidth,
+                                 width: kidsLabelWidth,
                                  height: subViewHeight)
         kidsLabel.text = .kidsDisplayKey
         view.addSubview(kidsLabel)
         
-        ageLabel.frame = CGRect(x: marginWidth + subViewWidth * 2,
+        ageLabel.frame = CGRect(x: marginWidth + defaultSubViewWidth * 2 + labelOffset,
                                 y: marginWidth - subViewHeight,
-                                width: subViewWidth,
+                                width: ageLabelWidth,
                                 height: subViewHeight)
         ageLabel.text = .ageDisplayKey
         view.addSubview(ageLabel)
         
-        paymentLabel.frame = CGRect(x: marginWidth + subViewWidth * 3,
+        paymentLabel.frame = CGRect(x: marginWidth + defaultSubViewWidth * 3,
                                     y: marginWidth - subViewHeight,
-                                    width: subViewWidth,
+                                    width: defaultSubViewWidth,
                                     height: subViewHeight)
         paymentLabel.text = .paymentTypeDisplayKey
         view.addSubview(paymentLabel)
         
-        signatureLabel.frame = CGRect(x: marginWidth + subViewWidth * 4,
+        signatureLabel.frame = CGRect(x: marginWidth + defaultSubViewWidth * 4,
                                       y: marginWidth - subViewHeight,
-                                      width: subViewWidth,
+                                      width: defaultSubViewWidth,
                                       height: subViewHeight)
         signatureLabel.text = .signatureDisplayKey
         view.addSubview(signatureLabel)
@@ -167,6 +170,7 @@ struct ViewPrinter {
         let label = UILabel()
         label.layer.borderWidth = 1
         label.font = UIFont.systemFont(ofSize: 8)
+        label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.backgroundColor = .white
         return label
