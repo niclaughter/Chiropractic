@@ -11,8 +11,6 @@ import UIKit
 class PracticeMemberTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    
-    fileprivate let imageController = ImageController()
 
     var practiceMember: PracticeMember? {
         didSet {
@@ -22,7 +20,6 @@ class PracticeMemberTableViewCell: UITableViewCell {
     
     @IBOutlet weak var practiceMemberNameLabel: UILabel!
     @IBOutlet weak var practiceMemberDetailLabel: UILabel!
-    @IBOutlet weak var practiceMemberSignatureImageView: UIImageView!
     
     // MARK: - Helpers
     
@@ -30,10 +27,5 @@ class PracticeMemberTableViewCell: UITableViewCell {
         guard let practiceMember = practiceMember else { return }
         practiceMemberNameLabel.text = practiceMember.name
         practiceMemberDetailLabel.text = !practiceMember.kids.isEmpty ? practiceMember.kids : practiceMember.adultOrChild.rawValue
-        imageController.fetchImage(forPracticeMember: practiceMember) { (image) in
-            DispatchQueue.main.async {
-                self.practiceMemberSignatureImageView.image = image
-            }
-        }
     }
 }

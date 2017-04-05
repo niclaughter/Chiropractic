@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct PracticeMember: FirebaseType {
+struct PracticeMember: FirebaseType, Equatable {
     
     let name: String
     let kids: String
@@ -76,4 +76,8 @@ struct PracticeMember: FirebaseType {
             self.paymentType = .insurance
         }
     }
+}
+
+func ==(lhs: PracticeMember, rhs: PracticeMember) -> Bool {
+    return lhs.identifier == rhs.identifier
 }

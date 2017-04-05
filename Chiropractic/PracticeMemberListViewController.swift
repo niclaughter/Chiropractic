@@ -15,6 +15,9 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     
     @IBOutlet weak var timeframeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var practiceMemberListTableView: UITableView!
+    
+    let viewPrinter = ViewPrinter()
+    
     var practiceMembersToDisplay = [PracticeMember]() {
         didSet {
             practiceMemberListTableView.reloadData()
@@ -63,7 +66,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     }
     
     @IBAction func printListButtonTapped(_ sender: Any) {
-        
+        viewPrinter.printData(forPracticeMembers: practiceMembersToDisplay, onPresentingViewController: self)
     }
     
     // MARK: - Practice Members Controller Delegate
@@ -85,9 +88,8 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
                 let indexPath = practiceMemberListTableView.indexPathForSelectedRow else { return }
             let practiceMember = practiceMembersToDisplay[indexPath.row]
             destinationViewController.practiceMember = practiceMember
-            guard let identifier = practiceMember.identifier,
-                let signatureImage = ImageController.shared.imagesDict[identifier] else { return }
-            destinationViewController.signatureImage = signatureImage
+            guard let identifier = practiceMember.identifier else { return }
+            destinationViewController.signatureImage = ImageController.shared.imagesDict[identifier]
         }
     }
 

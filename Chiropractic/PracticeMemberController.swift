@@ -16,6 +16,9 @@ class PracticeMemberController {
     var practiceMembers = [PracticeMember]() {
         didSet {
             delegate?.practiceMembersUpdated()
+            for practiceMember in practiceMembers {
+                ImageController.shared.fetchImage(forPracticeMember: practiceMember)
+            }
         }
     }
     var delegate: PracticeMembersControllerDelegate?

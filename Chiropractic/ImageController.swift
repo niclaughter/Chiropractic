@@ -12,6 +12,8 @@ import FirebaseStorage
 
 class ImageController {
     
+    static let shared = ImageController()
+    
     var imagesDict = [String: UIImage]()
     
     func saveSignatureImageToDatabase(_ image: UIImage, completion: @escaping (String) -> Void = { _ in }) {

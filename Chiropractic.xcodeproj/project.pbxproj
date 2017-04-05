@@ -11,7 +11,7 @@
 		66052E091E68E463008EF49F /* OfficeSignInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66052E081E68E463008EF49F /* OfficeSignInTableViewController.swift */; };
 		663CE1641E92891A005BE064 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663CE1631E92891A005BE064 /* String+Extension.swift */; };
 		663CE1661E928939005BE064 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663CE1651E928939005BE064 /* UIColor+Extension.swift */; };
-		663CE1681E928ADA005BE064 /* PrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663CE1671E928ADA005BE064 /* PrintViewController.swift */; };
+		663CE1681E928ADA005BE064 /* ViewPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663CE1671E928ADA005BE064 /* ViewPrinter.swift */; };
 		665014221E30205D006FC465 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665014211E30205D006FC465 /* Account.swift */; };
 		665014241E3024F4006FC465 /* PracticeMemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665014231E3024F4006FC465 /* PracticeMemberController.swift */; };
 		665014261E30250C006FC465 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665014251E30250C006FC465 /* AccountController.swift */; };
@@ -45,7 +45,7 @@
 		66052E081E68E463008EF49F /* OfficeSignInTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OfficeSignInTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		663CE1631E92891A005BE064 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		663CE1651E928939005BE064 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		663CE1671E928ADA005BE064 /* PrintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintViewController.swift; sourceTree = "<group>"; };
+		663CE1671E928ADA005BE064 /* ViewPrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPrinter.swift; sourceTree = "<group>"; };
 		665014211E30205D006FC465 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Account.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		665014231E3024F4006FC465 /* PracticeMemberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PracticeMemberController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		665014251E30250C006FC465 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AccountController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -166,7 +166,7 @@
 				6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */,
 				66027D811E6E15BA00BB4D65 /* DocumentManager.swift */,
 				669946761E64C59E00BC9430 /* LoaderView.swift */,
-				663CE1671E928ADA005BE064 /* PrintViewController.swift */,
+				663CE1671E928ADA005BE064 /* ViewPrinter.swift */,
 				663CE1601E928691005BE064 /* Extensions */,
 			);
 			name = Helper;
@@ -370,7 +370,7 @@
 				665014241E3024F4006FC465 /* PracticeMemberController.swift in Sources */,
 				66C10CA41E2ECB0800BF4AFF /* PracticeMemberListViewController.swift in Sources */,
 				66ABEA201E6CE23300B129EB /* ImageController.swift in Sources */,
-				663CE1681E928ADA005BE064 /* PrintViewController.swift in Sources */,
+				663CE1681E928ADA005BE064 /* ViewPrinter.swift in Sources */,
 				667F0ADB1E2AABB4002AFA4E /* AppDelegate.swift in Sources */,
 				663CE1661E928939005BE064 /* UIColor+Extension.swift in Sources */,
 				66FD65231E68F65400216841 /* InitialViewController.swift in Sources */,

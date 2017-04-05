@@ -22,7 +22,6 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     @IBOutlet weak var clearSignatureButton: UIButton!
     @IBOutlet weak var paymentTypePickerView: UIPickerView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -183,7 +182,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         guard let name = nameTextField.text,
             let kids = kidsTextField.text,
             let paymentTypeText = paymentTypeTextField.text,
-            let signature = signatureView.getCroppedSignature(scale: 0.25),
+            let signature = signatureView.getCroppedSignature(),
             !name.isEmpty, !paymentTypeText.isEmpty else {
                 presentErrorSigningInAlertController()
                 return
