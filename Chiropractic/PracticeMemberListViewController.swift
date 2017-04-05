@@ -15,6 +15,9 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     
     @IBOutlet weak var timeframeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var practiceMemberListTableView: UITableView!
+    
+    let viewPrinter = ViewPrinter()
+    
     var practiceMembersToDisplay = [PracticeMember]() {
         didSet {
             practiceMemberListTableView.reloadData()
@@ -35,7 +38,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.practiceMemberCellKey) as? PracticeMemberTableViewCell ?? PracticeMemberTableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: .practiceMemberCellKey) as? PracticeMemberTableViewCell ?? PracticeMemberTableViewCell()
         let practiceMember = practiceMembersToDisplay[indexPath.row]
         cell.practiceMember = practiceMember
         return cell
@@ -63,7 +66,7 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     }
     
     @IBAction func printListButtonTapped(_ sender: Any) {
-        
+        viewPrinter.printData(forPracticeMembers: practiceMembersToDisplay, onPresentingViewController: self)
     }
     
     // MARK: - Practice Members Controller Delegate
@@ -80,14 +83,13 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.toPracticeMemberDetailSegueKey {
+        if segue.identifier == .toPracticeMemberDetailSegueKey {
             guard let destinationViewController = segue.destination as? PracticeMemberDetailTableViewController,
                 let indexPath = practiceMemberListTableView.indexPathForSelectedRow else { return }
             let practiceMember = practiceMembersToDisplay[indexPath.row]
             destinationViewController.practiceMember = practiceMember
-            guard let identifier = practiceMember.identifier,
-                let signatureImage = ImageController.shared.imagesDict[identifier] else { return }
-            destinationViewController.signatureImage = signatureImage
+            guard let identifier = practiceMember.identifier else { return }
+            destinationViewController.signatureImage = ImageController.shared.imagesDict[identifier]
         }
     }
 

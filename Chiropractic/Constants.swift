@@ -10,42 +10,6 @@ import Foundation
 
 struct Constants {
     
-    /* Model Keys */
-    // MARK: - PracticeMember Keys
-    static let nameKey = "name"
-    static let kidsKey = "kids"
-    static let adultOrChildKey = "adultOrChild"
-    static let paymentTypeKey = "paymentType"
-    static let signatureDataStringKey = "signatureDataString"
-    static let signedInDateKey = "signedInDate"
-    static let identifierKey = "identifier"
-    static let signatureDownloadURLKey = "signatureDownloadURL"
-    
-    // MARK: - Account Keys
-    static let emailKey = "email"
-    static let accountTypeKey = "accountType"
-    
-    /* Firebase Keys */
-    static let practiceMembersEndpoint = "practiceMembers"
-    static let accountsEndpoint = "accounts"
-    static let imagesEndpoint = "images"
-    static let signaturesEndpoint = "signatures"
-    
-    /* URL Strings */
-    static let myChiro4KidsURLString = "http://mychiro4kids.com"
-    
-    /* Reuse Identifiers */
-    static let practiceMemberCellKey = "practiceMemberCell"
-    
-    /* Segue Identifiers */
-    static let toPracticeMemberDetailSegueKey = "toPracticeMemberDetailSegue"
-    
-    /* Storyboard IDs */
-    static let iPadSignInViewControllerKey = "iPadSignInNavigationController"
-    static let loginSignUpViewControllerKey = "loginSignUpViewController"
-    static let webViewControllerKey = "webViewController"
-    static let adminNavigationControllerKey = "adminNavigationController"
-    
 }
 
 typealias JSONDictionary = [String: Any]

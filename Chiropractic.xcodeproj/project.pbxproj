@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		66027D821E6E15BA00BB4D65 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66027D811E6E15BA00BB4D65 /* DocumentManager.swift */; };
 		66052E091E68E463008EF49F /* OfficeSignInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66052E081E68E463008EF49F /* OfficeSignInTableViewController.swift */; };
+		663CE1641E92891A005BE064 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663CE1631E92891A005BE064 /* String+Extension.swift */; };
+		663CE1661E928939005BE064 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663CE1651E928939005BE064 /* UIColor+Extension.swift */; };
+		663CE1681E928ADA005BE064 /* ViewPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663CE1671E928ADA005BE064 /* ViewPrinter.swift */; };
 		665014221E30205D006FC465 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665014211E30205D006FC465 /* Account.swift */; };
 		665014241E3024F4006FC465 /* PracticeMemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665014231E3024F4006FC465 /* PracticeMemberController.swift */; };
 		665014261E30250C006FC465 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665014251E30250C006FC465 /* AccountController.swift */; };
 		6655CB5A1E38267A00C4FC9F /* ViewTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */; };
-		665EADDD1E7990CD00C64197 /* GoogleAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665EADDC1E7990CD00C64197 /* GoogleAPIManager.swift */; };
 		667F0ADB1E2AABB4002AFA4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F0ADA1E2AABB4002AFA4E /* AppDelegate.swift */; };
 		667F0AE01E2AABB4002AFA4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667F0ADE1E2AABB4002AFA4E /* Main.storyboard */; };
 		667F0AE21E2AABB4002AFA4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667F0AE11E2AABB4002AFA4E /* Assets.xcassets */; };
@@ -22,7 +24,6 @@
 		669946771E64C59E00BC9430 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669946761E64C59E00BC9430 /* LoaderView.swift */; };
 		66A625881E2ABAAE002F3416 /* PracticeMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A625871E2ABAAE002F3416 /* PracticeMember.swift */; };
 		66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A625891E2ABADC002F3416 /* Enums.swift */; };
-		66A6258C1E2ABBBD002F3416 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A6258B1E2ABBBD002F3416 /* String+Extension.swift */; };
 		66ABEA201E6CE23300B129EB /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ABEA1F1E6CE23300B129EB /* ImageController.swift */; };
 		66AFAFAB1E2D77790013B68F /* SignatureCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */; };
 		66AFAFAE1E2D83F20013B68F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFAFAD1E2D83F20013B68F /* Constants.swift */; };
@@ -34,7 +35,6 @@
 		66C10CA81E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C10CA71E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift */; };
 		66DA6CD21E68BABC003A6174 /* PracticeMemberDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DA6CD11E68BABC003A6174 /* PracticeMemberDetailTableViewController.swift */; };
 		66DA6CD41E68E266003A6174 /* ImagesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DA6CD31E68E266003A6174 /* ImagesHelper.swift */; };
-		66E810D91E6F059100F7C9CC /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E810D81E6F059100F7C9CC /* ColorHelper.swift */; };
 		66FD65231E68F65400216841 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FD65221E68F65400216841 /* InitialViewController.swift */; };
 		66FF15E31E66134B00AC963F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66FF15E21E66134B00AC963F /* Images.xcassets */; };
 		9B81D702FB24B2529E8F3C60 /* Pods_Chiropractic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */; };
@@ -43,11 +43,13 @@
 /* Begin PBXFileReference section */
 		66027D811E6E15BA00BB4D65 /* DocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		66052E081E68E463008EF49F /* OfficeSignInTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OfficeSignInTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		663CE1631E92891A005BE064 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		663CE1651E928939005BE064 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		663CE1671E928ADA005BE064 /* ViewPrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPrinter.swift; sourceTree = "<group>"; };
 		665014211E30205D006FC465 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Account.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		665014231E3024F4006FC465 /* PracticeMemberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PracticeMemberController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		665014251E30250C006FC465 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AccountController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewTransitionManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		665EADDC1E7990CD00C64197 /* GoogleAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAPIManager.swift; sourceTree = "<group>"; };
 		667F0AD71E2AABB4002AFA4E /* Chiropractic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chiropractic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		667F0ADA1E2AABB4002AFA4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		667F0ADF1E2AABB4002AFA4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,7 +60,6 @@
 		669946761E64C59E00BC9430 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		66A625871E2ABAAE002F3416 /* PracticeMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PracticeMember.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		66A625891E2ABADC002F3416 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		66A6258B1E2ABBBD002F3416 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Extension.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		66ABEA1F1E6CE23300B129EB /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		66AFAFAA1E2D77790013B68F /* SignatureCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SignatureCaptureView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		66AFAFAD1E2D83F20013B68F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -70,7 +71,6 @@
 		66C10CA71E2ECF8400BF4AFF /* PracticeMemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeMemberTableViewCell.swift; sourceTree = "<group>"; };
 		66DA6CD11E68BABC003A6174 /* PracticeMemberDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeMemberDetailTableViewController.swift; sourceTree = "<group>"; };
 		66DA6CD31E68E266003A6174 /* ImagesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesHelper.swift; sourceTree = "<group>"; };
-		66E810D81E6F059100F7C9CC /* ColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		66FD65221E68F65400216841 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		66FF15E21E66134B00AC963F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C1B862C8529B0635F4A2EB44 /* Pods_Chiropractic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chiropractic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +105,15 @@
 				FA17D511EABA103FF64175AF /* Pods-Chiropractic.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		663CE1601E928691005BE064 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				663CE1631E92891A005BE064 /* String+Extension.swift */,
+				663CE1651E928939005BE064 /* UIColor+Extension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		667F0ACE1E2AABB4002AFA4E = {
@@ -151,15 +160,14 @@
 			isa = PBXGroup;
 			children = (
 				66A625891E2ABADC002F3416 /* Enums.swift */,
-				66A6258B1E2ABBBD002F3416 /* String+Extension.swift */,
 				66AFAFAD1E2D83F20013B68F /* Constants.swift */,
 				66DA6CD31E68E266003A6174 /* ImagesHelper.swift */,
 				66AFAFAF1E2D84C50013B68F /* FirebaseController.swift */,
 				6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */,
 				66027D811E6E15BA00BB4D65 /* DocumentManager.swift */,
 				669946761E64C59E00BC9430 /* LoaderView.swift */,
-				66E810D81E6F059100F7C9CC /* ColorHelper.swift */,
-				665EADDC1E7990CD00C64197 /* GoogleAPIManager.swift */,
+				663CE1671E928ADA005BE064 /* ViewPrinter.swift */,
+				663CE1601E928691005BE064 /* Extensions */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -348,24 +356,24 @@
 			files = (
 				66AFAFB01E2D84C50013B68F /* FirebaseController.swift in Sources */,
 				665014221E30205D006FC465 /* Account.swift in Sources */,
-				66A6258C1E2ABBBD002F3416 /* String+Extension.swift in Sources */,
 				66A625881E2ABAAE002F3416 /* PracticeMember.swift in Sources */,
 				66027D821E6E15BA00BB4D65 /* DocumentManager.swift in Sources */,
 				66C10CA21E2EC25300BF4AFF /* WebViewController.swift in Sources */,
 				66DA6CD21E68BABC003A6174 /* PracticeMemberDetailTableViewController.swift in Sources */,
 				66A6258A1E2ABADC002F3416 /* Enums.swift in Sources */,
 				6655CB5A1E38267A00C4FC9F /* ViewTransitionManager.swift in Sources */,
-				66E810D91E6F059100F7C9CC /* ColorHelper.swift in Sources */,
 				669946771E64C59E00BC9430 /* LoaderView.swift in Sources */,
 				66052E091E68E463008EF49F /* OfficeSignInTableViewController.swift in Sources */,
 				665014261E30250C006FC465 /* AccountController.swift in Sources */,
+				663CE1641E92891A005BE064 /* String+Extension.swift in Sources */,
 				66DA6CD41E68E266003A6174 /* ImagesHelper.swift in Sources */,
 				665014241E3024F4006FC465 /* PracticeMemberController.swift in Sources */,
 				66C10CA41E2ECB0800BF4AFF /* PracticeMemberListViewController.swift in Sources */,
 				66ABEA201E6CE23300B129EB /* ImageController.swift in Sources */,
+				663CE1681E928ADA005BE064 /* ViewPrinter.swift in Sources */,
 				667F0ADB1E2AABB4002AFA4E /* AppDelegate.swift in Sources */,
+				663CE1661E928939005BE064 /* UIColor+Extension.swift in Sources */,
 				66FD65231E68F65400216841 /* InitialViewController.swift in Sources */,
-				665EADDD1E7990CD00C64197 /* GoogleAPIManager.swift in Sources */,
 				66AFAFAE1E2D83F20013B68F /* Constants.swift in Sources */,
 				66C10CA01E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift in Sources */,
 				66AFAFAB1E2D77790013B68F /* SignatureCaptureView.swift in Sources */,

@@ -55,9 +55,9 @@ class InitialViewController: UIViewController {
     func setUpLoader(withTitle title: String) {
         var config = LoaderView.Config()
         config.size = 150
-        config.spinnerColor = ColorHelper.softGrey
+        config.spinnerColor = .softGray
         config.spinnerLineWidth = 3
-        config.foregroundColor = ColorHelper.softBlack
+        config.foregroundColor = .softBlack
         config.foregroundAlpha = 0.5
         LoaderView.setConfig(config: config)
         LoaderView.show(title: title, animated: true)

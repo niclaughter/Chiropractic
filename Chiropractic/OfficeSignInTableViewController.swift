@@ -22,7 +22,6 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     @IBOutlet weak var clearSignatureButton: UIButton!
     @IBOutlet weak var paymentTypePickerView: UIPickerView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -146,7 +145,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true
-        toolBar.tintColor = ColorHelper.softBlue
+        toolBar.tintColor = .softBlue
         toolBar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(donePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -183,7 +182,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         guard let name = nameTextField.text,
             let kids = kidsTextField.text,
             let paymentTypeText = paymentTypeTextField.text,
-            let signature = signatureView.getCroppedSignature(scale: 0.25),
+            let signature = signatureView.getCroppedSignature(),
             !name.isEmpty, !paymentTypeText.isEmpty else {
                 presentErrorSigningInAlertController()
                 return
@@ -208,10 +207,10 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         }
         ImageController.shared.saveSignatureImageToDatabase(signature) { (identifier) in
             PracticeMemberController.shared.signInPracticeMember(withName: name, kids: kids, adultOrChild: adultOrChild, paymentType: paymentType, andIdentifier: identifier)
+            self.clearViews()
+            self.presentSignInSuccessfulAlertController()
+            LoaderView.hide()
         }
-        self.clearViews()
-        self.presentSignInSuccessfulAlertController()
-        LoaderView.hide()
     }
     
     func presentSignInSuccessfulAlertController() {
