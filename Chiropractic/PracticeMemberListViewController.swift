@@ -66,7 +66,11 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
     }
     
     @IBAction func printListButtonTapped(_ sender: Any) {
-        viewPrinter.printData(forPracticeMembers: practiceMembersToDisplay, onPresentingViewController: self)
+        if practiceMembersToDisplay.count > 0 {
+            viewPrinter.printData(forPracticeMembers: practiceMembersToDisplay, onPresentingViewController: self)
+        } else {
+            presentNoPracticeMembersAlertController()
+        }
     }
     
     // MARK: - Practice Members Controller Delegate
@@ -110,5 +114,12 @@ class PracticeMemberListViewController: UIViewController, UITableViewDelegate, U
             unsortedPracticeMembers = PracticeMemberController.shared.practiceMembers.filter { calendar.isDate($0.signedInDate, equalTo: today, toGranularity: .month) }
         }
         practiceMembersToDisplay = unsortedPracticeMembers.sorted(by: { $0.0.signedInDate < $0.1.signedInDate })
+    }
+    
+    func presentNoPracticeMembersAlertController() {
+        let alertController = UIAlertController(title: "No Practice Members To Print!", message: "There aren't any Practice Members in this timeframe. Please pick another one to print from.", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true, completion: nil)
     }
 }

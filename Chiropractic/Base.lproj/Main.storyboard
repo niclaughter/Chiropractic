@@ -192,7 +192,7 @@
             </objects>
             <point key="canvasLocation" x="-2450.4000000000001" y="-1396.5517241379312"/>
         </scene>
-        <!--Practice Member List View Controller-->
+        <!--Practice Members-->
         <scene sceneID="gtR-wO-8t9">
             <objects>
                 <viewController id="bql-mS-jMm" customClass="PracticeMemberListViewController" customModule="Chiropractic" customModuleProvider="target" sceneMemberID="viewController">
@@ -306,7 +306,7 @@
                             <constraint firstItem="OjK-Ud-y3H" firstAttribute="top" secondItem="8aR-O5-hBc" secondAttribute="bottom" id="vEp-j5-f6y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZoD-ez-KgE"/>
+                    <navigationItem key="navigationItem" title="Practice Members" id="ZoD-ez-KgE"/>
                     <connections>
                         <outlet property="practiceMemberListTableView" destination="GCj-qq-vJZ" id="hvR-88-N1D"/>
                         <outlet property="timeframeSegmentedControl" destination="RZO-DU-V1p" id="oEo-AJ-8v1"/>
@@ -316,7 +316,7 @@
             </objects>
             <point key="canvasLocation" x="-570.39999999999998" y="-538.38080959520244"/>
         </scene>
-        <!--Title-->
+        <!--Practice Member Detail Table View Controller-->
         <scene sceneID="G63-K3-fpF">
             <objects>
                 <tableViewController id="YGt-Zc-3uR" customClass="PracticeMemberDetailTableViewController" customModule="Chiropractic" customModuleProvider="target" sceneMemberID="viewController">
@@ -327,7 +327,7 @@
                         <sections>
                             <tableViewSection headerTitle="Name" id="JuU-gx-FoY">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="b2d-4g-Jjo">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="b2d-4g-Jjo">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b2d-4g-Jjo" id="MRS-g8-s6k">
@@ -353,7 +353,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Kids" id="mdU-4j-kCL">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PE2-AZ-RZV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="PE2-AZ-RZV">
                                         <rect key="frame" x="0.0" y="100" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PE2-AZ-RZV" id="IQ1-kE-gLg">
@@ -379,7 +379,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Adult or Child" id="97b-Bd-Q1X">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Bc5-wQ-Ibd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Bc5-wQ-Ibd">
                                         <rect key="frame" x="0.0" y="172" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bc5-wQ-Ibd" id="1ru-Oq-Zfr">
@@ -405,7 +405,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Payment Type" id="X8G-GD-Hov">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ywB-rQ-B2H">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ywB-rQ-B2H">
                                         <rect key="frame" x="0.0" y="244" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ywB-rQ-B2H" id="EeW-KP-9Jb">
@@ -431,7 +431,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Time Checked In" id="8J3-fO-HwF">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yN0-oO-5Zb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="yN0-oO-5Zb">
                                         <rect key="frame" x="0.0" y="316" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yN0-oO-5Zb" id="NIg-NL-fxs">
@@ -457,7 +457,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Signature" id="LS3-Fb-XvC">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="132" id="zuz-ur-KSD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="132" id="zuz-ur-KSD">
                                         <rect key="frame" x="0.0" y="388" width="375" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zuz-ur-KSD" id="x8a-CJ-tV1">
@@ -484,7 +484,7 @@
                             <outlet property="delegate" destination="YGt-Zc-3uR" id="GFC-4k-zjN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="blX-y3-jkW"/>
+                    <navigationItem key="navigationItem" id="blX-y3-jkW"/>
                     <connections>
                         <outlet property="adultOrChildLabel" destination="TO3-gI-V0V" id="Kfz-k6-SIH"/>
                         <outlet property="kidsNamesLabel" destination="Iab-se-GOU" id="Ip1-Zb-crb"/>
