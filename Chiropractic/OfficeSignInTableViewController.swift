@@ -18,7 +18,8 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     @IBOutlet weak var adultOrChildSelector: UISegmentedControl!
     @IBOutlet weak var paymentTypeTextField: UITextField!
     @IBOutlet weak var signatureView: SignatureCaptureView!
-    @IBOutlet weak var signInButton: UIBarButtonItem!    
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var clearFormButton: UIButton!
     @IBOutlet weak var clearSignatureButton: UIButton!
     @IBOutlet weak var paymentTypePickerView: UIPickerView!
     
@@ -139,6 +140,10 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     func setUpViews() {
         tableView.tableFooterView = UIView()
         
+        clearFormButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        clearSignatureButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        signInButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        
         signatureView.delegate = self
         tableView.isScrollEnabled = false
         
@@ -169,6 +174,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         paymentTypeTextField.text = nil
         paymentTypePickerView.selectRow(0, inComponent: 0, animated: false)
         signatureView.clear()
+        tableView.isScrollEnabled = true
     }
     
     @objc func donePicker() {
