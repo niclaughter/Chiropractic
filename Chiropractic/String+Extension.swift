@@ -56,6 +56,7 @@ extension String {
     static var adminNavigationControllerKey: String { get { return "adminNavigationController" } }
     
     /* User-Facing String Keys */
+    static var timestampDisplayKey: String { get { return "Timestamp" } }
     static var nameDisplayKey: String { get { return "Name" } }
     static var kidsDisplayKey: String { get { return "Kids" } }
     static var ageDisplayKey: String { get { return "Age" } }

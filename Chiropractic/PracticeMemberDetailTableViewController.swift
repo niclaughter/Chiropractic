@@ -19,6 +19,8 @@ class PracticeMemberDetailTableViewController: UITableViewController {
     @IBOutlet weak var timeCheckedInLabel: UILabel!
     @IBOutlet weak var signatureImageView: UIImageView!
     
+    let dateHelper = DateHelper()
+    
     var practiceMember: PracticeMember? {
         didSet {
             if !isViewLoaded {
@@ -43,19 +45,11 @@ class PracticeMemberDetailTableViewController: UITableViewController {
         kidsNamesLabel.text = !practiceMember.kids.isEmpty ? practiceMember.kids : "No kids"
         adultOrChildLabel.text = practiceMember.adultOrChild.rawValue
         paymentTypeLabel.text = practiceMember.paymentType.rawValue
-        timeCheckedInLabel.text = dateFormatter.string(from: practiceMember.signedInDate)
+        timeCheckedInLabel.text = dateHelper.dateFormatter.string(from: practiceMember.signedInDate)
     }
     
     func updateViewForSignatureImage() {
         guard let signatureImage = signatureImage else { return }
         signatureImageView.image = signatureImage
     }
-    
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
-        formatter.doesRelativeDateFormatting = true
-        return formatter
-    }()
 }
