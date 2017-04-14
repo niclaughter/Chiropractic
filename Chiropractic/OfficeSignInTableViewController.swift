@@ -46,7 +46,7 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     // MARK: - SignatureCaptureDelegate
     
     func startedDrawing() {
-        tableView.isScrollEnabled = false
+        NSLog("Started drawing")
     }
     
     func finishedDrawing() {
@@ -174,14 +174,12 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
         paymentTypeTextField.text = nil
         paymentTypePickerView.selectRow(0, inComponent: 0, animated: false)
         signatureView.clear()
-        tableView.isScrollEnabled = true
     }
     
     @objc func donePicker() {
         let row = paymentTypePickerView.selectedRow(inComponent: 0)
         paymentTypePickerView.selectRow(row, inComponent: 0, animated: false)
         paymentTypeTextField.resignFirstResponder()
-        tableView.isScrollEnabled = false
     }
     
     func signInPracticeMember() {
