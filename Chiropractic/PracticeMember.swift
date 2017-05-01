@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import RNCryptor
 
-struct PracticeMember: FirebaseType, Equatable {
+class PracticeMember: FirebaseType, Equatable {
     
     let name: String
     let kids: String
@@ -17,7 +18,8 @@ struct PracticeMember: FirebaseType, Equatable {
     let paymentType: PaymentType
     var identifier: String?
     let signedInDate: Date
-    var endpoint: String = .practiceMembersEndpoint
+    // TODO: - Remove testing
+    var endpoint: String = "TESTING/\(String.practiceMembersEndpoint)"
     
     var dictionaryCopy: JSONDictionary {
         return [
@@ -44,7 +46,7 @@ struct PracticeMember: FirebaseType, Equatable {
         self.signedInDate = signedInDate
     }
     
-    init?(dictionary: JSONDictionary, identifier: String) {
+    required init?(dictionary: JSONDictionary, identifier: String) {
         guard let name = dictionary[.nameKey] as? String,
             let kids = dictionary[.kidsKey] as? String,
             let adultOrChildString = dictionary[.adultOrChildKey] as? String,

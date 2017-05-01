@@ -11,7 +11,6 @@ target 'Chiropractic' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
-    	pod 'GoogleAPIClientForREST/Sheets', '~> 1.1.1'
-    	pod 'GTMOAuth2', '~> 1.1.4'
+	pod 'RNCryptor', '~> 5.0'
 
 end

@@ -62,4 +62,7 @@ extension String {
     static var ageDisplayKey: String { get { return "Age" } }
     static var paymentTypeDisplayKey: String { get { return "Payment Type" } }
     static var signatureDisplayKey: String { get { return "Signature" } }
+    
+    /* Encryption Key */
+    static var encryptionKey: String { get { return "F16977903F6F89C53FE94F22862F58E7D170F942DE356DCBD6C34F626CBF9C64" } }
 }
