@@ -11,20 +11,31 @@ import RNCryptor
 
 struct EncryptionEngine {
     
-    func encryptToString(data: Data) -> String {
+    // MARK: - Strings
+    
+    func encrypt(string: String) -> String {
+        guard let data = string.data(using: .utf8) else { fatalError("Cannot get data from string in function: \(#function)") }
         return RNCryptor.encrypt(data: data, withPassword: .encryptionKey).base64EncodedString()
     }
+    
+    func decryptString(fromString string: String) -> String? {
+        guard let data = Data(base64Encoded: string) else { fatalError("Could not get data from base64EncodedString in function: \(#function)") }
+        var returnData = Data()
+        do {
+            try returnData = RNCryptor.decrypt(data: data, withPassword: .encryptionKey)
+        } catch {
+            fatalError("Could not decrypt data in function: \(#function)")
+        }
+        return String(data: returnData, encoding: .utf8)
+    }
+    
+    // MARK: - Data
     
     func encryptToData(data: Data) -> Data {
         return RNCryptor.encrypt(data: data, withPassword: .encryptionKey)
     }
     
-    func decryptFromString(string: String) -> Data? {
-        guard let data = Data(base64Encoded: string) else { fatalError("Could not get data from base64EncodedString in: \(#function)") }
-        return try? RNCryptor.decrypt(data: data, withPassword: .encryptionKey)
-    }
-    
-    func decrypt(fromData data: Data) -> Data? {
+    func decryptData(fromData data: Data) -> Data? {
         return try? RNCryptor.decrypt(data: data, withPassword: .encryptionKey)
     }
 }

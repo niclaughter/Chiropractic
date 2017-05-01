@@ -8,8 +8,6 @@
 
 import Foundation
 
-struct Constants {
-    
-}
+
 
 typealias JSONDictionary = [String: Any]
