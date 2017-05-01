@@ -18,6 +18,7 @@
 		6655CB5A1E38267A00C4FC9F /* ViewTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */; };
 		6658DAE11EA12F0E0026DE2F /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658DAE01EA12F0E0026DE2F /* DateHelper.swift */; };
 		6658DAE31EA139F30026DE2F /* PrinterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658DAE21EA139F30026DE2F /* PrinterLabel.swift */; };
+		666AC06A1EB7842600E3144C /* EncryptionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666AC0691EB7842600E3144C /* EncryptionEngine.swift */; };
 		667F0ADB1E2AABB4002AFA4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F0ADA1E2AABB4002AFA4E /* AppDelegate.swift */; };
 		667F0AE01E2AABB4002AFA4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667F0ADE1E2AABB4002AFA4E /* Main.storyboard */; };
 		667F0AE21E2AABB4002AFA4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667F0AE11E2AABB4002AFA4E /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		6655CB591E38267A00C4FC9F /* ViewTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewTransitionManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6658DAE01EA12F0E0026DE2F /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		6658DAE21EA139F30026DE2F /* PrinterLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterLabel.swift; sourceTree = "<group>"; };
+		666AC0691EB7842600E3144C /* EncryptionEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionEngine.swift; sourceTree = "<group>"; };
 		667F0AD71E2AABB4002AFA4E /* Chiropractic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chiropractic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		667F0ADA1E2AABB4002AFA4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		667F0ADF1E2AABB4002AFA4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				66027D811E6E15BA00BB4D65 /* DocumentManager.swift */,
 				669946761E64C59E00BC9430 /* LoaderView.swift */,
 				663CE1671E928ADA005BE064 /* ViewPrinter.swift */,
+				666AC0691EB7842600E3144C /* EncryptionEngine.swift */,
 				663CE1601E928691005BE064 /* Extensions */,
 			);
 			name = Helper;
@@ -382,6 +385,7 @@
 				663CE1661E928939005BE064 /* UIColor+Extension.swift in Sources */,
 				66FD65231E68F65400216841 /* InitialViewController.swift in Sources */,
 				6658DAE31EA139F30026DE2F /* PrinterLabel.swift in Sources */,
+				666AC06A1EB7842600E3144C /* EncryptionEngine.swift in Sources */,
 				66AFAFAE1E2D83F20013B68F /* Constants.swift in Sources */,
 				66C10CA01E2EC22C00BF4AFF /* LoginSignUpTableViewController.swift in Sources */,
 				66AFAFAB1E2D77790013B68F /* SignatureCaptureView.swift in Sources */,

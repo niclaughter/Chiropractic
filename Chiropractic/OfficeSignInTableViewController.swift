@@ -58,14 +58,14 @@ class OfficeSignInTableViewController: UITableViewController, SignatureCaptureDe
     override func becomeFirstResponder() -> Bool {
         super.becomeFirstResponder()
         
-        tableView.isScrollEnabled = true
+//        tableView.isScrollEnabled = true
         return true
     }
     
     override func resignFirstResponder() -> Bool {
         super.resignFirstResponder()
         
-        tableView.isScrollEnabled = false
+//        tableView.isScrollEnabled = false
         return true
     }
     
